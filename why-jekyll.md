@@ -2,6 +2,7 @@
 layout: page
 nav-title: Home
 title: Jekyll is cool because&hellip;
+permalink: why-jekyll/
 ---
 
 Reasons to use a Jekyll Wireframe System
