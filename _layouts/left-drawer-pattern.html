@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body class="layout-{{ page.layout }}">
+
+		<div id="top" class="page fwf--row">
+			<div class="mainnav fwf--fixed__left" role="complementary">
+				
+				{% include ns-navigation.html %}
+			
+			</div>
+			<div class="fwf--fluid-wrapper" role="main">
+				<div id="main" class="content fwf--fluid__right">
+					
+					<div class="navtoggle">
+					    <a href=":;javascript" class="js-open-drawer navtoggle--button">
+					        <span class="fa navtoggle--icon" aria-hidden="true"><span>&equiv;</span></span>
+					        <span class="navtoggle--label">Menu</span>
+					    </a>
+					</div>
+					
+					<div class="container">
+						{{ content }}
+					</div>
+				
+					{% include footer.html %}
+					
+					<a class="drawer-overlay js-close-drawer"></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Would be better to move JS out of footer.html and placed here when implemented-->
+	</body>
+</html>
