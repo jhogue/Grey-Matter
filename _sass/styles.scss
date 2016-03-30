@@ -12,10 +12,9 @@
 	"base/mixins",
 	"base/colors",
 	"base/typesizes",
-	"base/variables";
+	"base/variables",
 
 // These will start to output some CSS
-@import
 	// Reset and global styles
 	"base/reset",
 	"base/accessibility",
@@ -24,5 +23,9 @@
 	// Layout and Grid
 	"layout/layout",
 
-	// All files inside 
+	// All files inside with SASS globbing FTW
 	"component/*";
+
+// Using patterns? Turn on or off as needed:
+@import
+	"patterns/left-drawer-push";
