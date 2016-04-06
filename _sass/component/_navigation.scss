@@ -26,3 +26,20 @@
 		}
 	}
 }
+
+
+// Override Specific styles for a pattern
+.layout-left-drawer-pattern {
+
+	.mainnav {
+		background-color: transparent;
+
+		&--list {
+			text-align: left;
+
+			li { display: block; }
+		}
+
+		&--link { background-color: transparent; }
+	}
+}
