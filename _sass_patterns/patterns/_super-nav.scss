@@ -1,0 +1,229 @@
+$list-padding: 128 * 1px;
+
+.supernav--column { @include hide(); }
+
+.layout-super-nav-pattern {
+	
+	.mainhead { background-color: palette(brand, dark); }
+	
+	.navtoggle--button,
+	.talk--link,
+	.language--link,
+	.findloft--link,
+	.search--link {
+		//color: palette(mono, 10);
+		
+		@include touch-hover() {
+			background-color: palette(brand);
+			//color: palette(brand, light);
+		}
+	}
+	
+	li.mainnav--langauge,
+	.talk,
+	.findloft { @include hide; }
+	
+	.content {
+		padding-top: $vert-line-height * 2;
+	}
+	
+	// Media
+	@media (min-width: em(540)) {
+		
+		li.mainnav--findloft { @include hide; }
+		
+		.findloft { @include show(block); }
+	}
+	
+	@media (min-width: em(720)) {
+		
+		li.mainnav--talk { @include hide; }
+		
+		.talk { @include show(block); }
+	}
+	
+	// For mobile up to tablet, move the navigation into the space made by the .fwf--fixed__left container
+	@include media($nav-break-below) {
+		
+		@at-root {
+			@include javascript-listener('toggle-drawer-nav');
+		}
+		
+		.mainnav {
+
+			&--wrapper {
+				@include transition( opacity 500ms ease );
+				background-color: $color-body-bg;
+				opacity: .33;
+				position: absolute;
+					top: 0; left: - $fwf-width;
+				width: $fwf-width;
+			}
+		}
+
+		&.active-nav .mainnav--wrapper { opacity: 1; }
+	}
+	
+	// Now make a typical horizontal nav bar with drop down menus
+	@include media($nav-break) {
+		
+		@at-root {
+			@include javascript-listener('adhesive-nav');
+		}
+		
+		.navtoggle { @include hide; }
+			
+		.stuck {
+			@include transition( opacity 250ms ease );
+			box-shadow: 0 1px 2px rgba(#000, .25);
+			opacity: .94;
+			position: fixed;
+				top: 0; right: 0; left: 0;
+			z-index: map-get($zindex, stucknav);
+			
+			&:hover { opacity: 1; }
+		}
+			
+		.brand {
+			position: fixed;
+				top: 0;
+			z-index: map-get($zindex, stuckbrand);
+		}
+		
+		.mainnav {
+			
+			&--wrapper {
+				@include transition( box-shadow 250ms ease );
+				background-color: palette(brand);
+			}
+			
+			&--list {
+				@include clearfix;
+				padding-left: $list-padding;
+				width: 100%;
+				
+				li {
+					float: left;
+					position: relative;
+					width: 20%;
+					
+					&.mainnav--utility,
+					&.mainnav--social { @include hide; }
+					
+					&:hover .subnav--list {
+						opacity: 1;
+						top: 100%;
+					}
+					
+					&:hover > .mainnav--link {
+						background-color: palette(brand, light);
+						color: palette(mono, 75);
+						
+						/*&::before {
+							// Seems that we need a psuedo element to keep the entire area hoverable
+							background-color: transparent;
+							content: '';
+							height: 30%;
+							position: absolute;
+								top: 99%; left: 0; right: 0;
+						}
+						
+						&::after {
+							border-width: .75em;
+							border-style: solid;
+							border-color: palette(brand, light) transparent transparent transparent;
+							content: '';
+							height: 1.5em;
+							margin-left: -.75em;
+							position: absolute;
+								top: 99%; left: 50%;
+							width: 1.5em;
+						}*/
+					}
+				}
+				
+				.subnav--list {
+					@include transition( opacity 250ms ease );
+					@include transition-delay( 250ms );
+					min-width: 100%;
+					opacity: 0;
+					position: absolute;
+						top: -99em; right: 0;
+					z-index: map-get($zindex, subnav);
+					
+					li {
+						float: none;
+						width: auto;
+					}
+				}
+				
+				.subnav--link { white-space: nowrap; }
+			}
+			
+			&--link {
+				color: palette(mono, white);
+				display: block;
+				text-align: center;
+				width: auto;
+			}
+			
+			&--toggle { @include hide; }
+		}
+	} // end @include media($nav-break)
+	
+	// Start a big super nav
+	@media (min-width: 1200px) {
+		
+		.mainnav {
+			
+			&--wrapper {}
+			
+			&--list {
+				position: relative;
+				
+				li { position: static; }
+				
+				.subnav--list {
+					min-width: 0;
+						left: 0; right: 0;
+				}
+			}
+		}
+		
+		.supernav {
+			@include clearfix;
+			position: relative;
+			overflow: hidden;
+			
+			&--column--list {
+				background-color: percent-color(palette(brand, light), 80);
+				float: left;
+				min-height: 20em;
+				width: 25%;
+			}
+			
+			&--column {
+				@include show();
+				height: 100%;
+				position: absolute;
+					top: 0; right: 0;
+				overflow: hidden;
+				vertical-align: top;
+				width: 75%;
+				
+				img {
+					min-height: 100%;
+					min-width: 100%;
+					position: absolute;
+						top: 0; right: 0;
+				}
+			}
+		}
+		
+		.mainnav--list li:nth-child(8) .supernav--column--list,
+		.mainnav--list li:nth-child(9) .supernav--column--list { float: right; }
+		
+		.mainnav--list li:nth-child(8) .supernav--column,
+		.mainnav--list li:nth-child(9) .supernav--column { right: auto; left: 0; }
+	}
+}
