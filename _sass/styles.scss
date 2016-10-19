@@ -5,11 +5,11 @@
 	// Libraries and breakpoints
 	"libraries/bourbon/bourbon",
 	"libraries/neat/neat",
-	"layout/breakpoints",
 
 	// Core functions, mixins and variables
 	"base/functions",
 	"base/mixins",
+	"layout/breakpoints",
 	"base/colors",
 	"base/typesizes",
 	"base/variables",
@@ -28,4 +28,4 @@
 
 // Using patterns? Turn on or off as needed:
 @import
-	"patterns/left-drawer-push";
+	//"patterns/left-drawer-push";
