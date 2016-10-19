@@ -24,7 +24,14 @@ Everything inside that folder will be added and watched for changes.
 To get up and running:
 
 ### Install dependencies
-Navigate to this folder in your Terminal, then:
+Navigate to your projects _sass/libraries folder in your Terminal, then:
+
+```
+$ bourbon install
+$ neat install
+```
+
+Navigate to your project's root folder in your Terminal, then:
 
 ```
 $ gem install bundler
@@ -32,6 +39,7 @@ $ gem install rake
 
 $ bundle install
 ```
+Note: you may need to run the installers using the $ sudo command depanding on the permissions of your computer.
 
 ### To run the local server
 
@@ -39,7 +47,7 @@ $ bundle install
 $ rake serve
 ```
 
-The server is available at `http://localhost:4000`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4000/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
+The server is available at `http://localhost:4000` or  `http://0.0.0.0:4000`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4000/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
 
 ## Usage
 Any folder prefixed with an underscore is used as a build folder only, it is not compiled and rendered. An `assets` or `files` folder (unprefixed) will be. Additional files that should be excluded from the build should be added to `_config.yml`.
