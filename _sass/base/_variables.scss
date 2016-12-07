@@ -11,12 +11,5 @@ $default-border-radius: 4px;
 
 // Tables
 $table-border-collapse: true;
-$table-border-color: $default-border-color;
+$table-border-color: $color-borders;
 $table-cell-padding: .5em;
-
-// Z-indices
-$zindex: (
-	body: 1,
-	overlay: 9999,
-	navtoggle: 10000
-);

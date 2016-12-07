@@ -1,12 +1,5 @@
-#Install Bourbon, Neat, and for wireframing, Refills
+Any additional CSS that a plugin might require. 
 
-```shell
-# from anywhere
-gem install bourbon
+Example: if using Flexslider for slideshows, we might include the Flexslider base CSS here for inclusion. 
 
-#from the folder you'd like to install bourbon into
-bourbon install
-neat install
-```
-
-For optional Refills, go to the [http://refills.bourbon.io/](Refills) website, click “Show Code” under the component or pattern that you want and copy-paste it into your project. Don't forget the JS as well. 
+Bourbon and Neat should go into this folder when downloaded.
