@@ -1,0 +1,30 @@
+---
+layout: page
+nav-title: Refills
+title: Sample Refill Components
+permalink: refills/
+---
+
+# Refills from Thoughbot
+
+We use Refills to quickly prototype patterns. Additional patterns may be added as well. Simply include the SASS file located in `_sass_patterns` and then include the relevant Refills file where you want it: `{# include '_sass_patterns/refills_html/name-of-file.html' #}`. 
+
+{% comment %}
+	The *directory* plugin scans a directory and gives us access to the following variables:
+	file.url        # absolute path to file
+  file.name       # basename
+  file.date       # date extracted from beginning of filename, if present (optional)
+  file.slug       # basename with the date and file extension stripped off
+  file.title      # file.slug with hyphens converted to spaces, and put into Title Case
+
+  Below we loop over all files to build an example page
+{% endcomment %}
+
+{% directory path: _sass_patterns/refills_html %}
+  
+  {% include_relative {{ file.url }} %}
+  
+  <textarea>
+    {% include_relative {{ file.url }} %}
+  </textarea>
+{% enddirectory %}
