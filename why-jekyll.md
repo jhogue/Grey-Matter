@@ -18,14 +18,29 @@ Reasons to use a Jekyll Wireframe System
 * Built-in support for [syntax highlighting of code snippets](https://jekyllrb.com/docs/posts/#highlighting-code-snippets) using either Pygments or Rouge.
 * [Support for data files](https://jekyllrb.com/docs/datafiles/) (CSV, JSON or YAML) to drive dynamic lists of content. 
 
-#Oomph Scaffold
+
+# Oomph Scaffold
 Pull the [latest Oomph SASS Scaffold](https://github.com/oomphinc/scss-scaffold) and insert it into this project at `_sass`. This will help enssure that the code coming out of the wireframe can be inserted right into the project as development on WordPress or Drupal begins. 
 
-#Bourbon and Neat
+
+# Bourbon and Neat
 These libraries/tools help get us going quicker, and are required by the Oomph SASS Scaffold. Additionally, using [Refills](http://refills.bourbon.io/) [Empties](http://empties.bourbon.io/) can help us start faster with common markup patterns. 
 
-#Font Awesome
+
+# Font Awesome
 We also include a CDN link to the full Font Awesome set of icons. [Reference guide is here](http://fortawesome.github.io/Font-Awesome/icons/). This helps us use icons quickly, and apply a custom set later as we define which icons we need. [A list of the icons that this project uses should be made here]('/icons'). 
 
-#More Jekyll
+
+# More Jekyll
 You like? Then [check out Jekyll Bootstrap](http://jekyllbootstrap.com) for some neat ways to make an entire site with Jekyll and serve it on Github pages or your own server. 
+
+
+# Cool things Jekyll templating tags do
+
+Samples show in comment syntax to avoid being executed. Replace `#` symbols with `%`. 
+
+The `unless` tag in a `forloop`: 
+
+{% highlight ERB %}
+<a href="{{  file.url }}" >{{ file.name }}</a>{# unless forloop.last #}, {# endunless #}
+{% endhighlight %}
