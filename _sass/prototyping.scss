@@ -1,15 +1,16 @@
 // The stuff needed for prototyping
 // This is a stand-alone, so include bourbon and such again
 
+// None of these output CSS, but we need the functions and variables
 @import
-"../scaffold/libraries/bourbon/bourbon",
-"../scaffold/layout/settings",
-"../scaffold/libraries/neat/neat",
-"../scaffold/base/functions",
-"../scaffold/base/mixins",
-"../scaffold/base/colors",
-"../scaffold/base/variables",
-"../scaffold/base/typesizes";
+"libraries/bourbon/bourbon",
+"layout/settings",
+"libraries/neat/neat",
+"base/functions",
+"base/mixins",
+"base/colors",
+"base/variables",
+"base/typesizes";
 
 @import 
 "/prototyping/*",
