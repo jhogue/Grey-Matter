@@ -6,6 +6,16 @@ $font-sans: $helvetica;
 $font-serif: $georgia;
 $font-mono: $monospace;
 
+$font-custom: 'Boogaloo', $font-sans;
+
+// Copy
+$paragraph: 1em;
+$line-height: 1.75;
+
+// establishing some vertical rhythm for no type elements
+// use this on margin bottom etc.
+$vert-line-height: $line-height * 1em;
+
 // Other globals
 $default-border-radius: 4px;
 

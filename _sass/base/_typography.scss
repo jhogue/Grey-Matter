@@ -1,32 +1,22 @@
 // @file typography.scss
 
-// Copy
-$paragraph: 1em;
-$line-height: 1.75;
-
-// establishing some vertical rhythm for no type elements
-// use this on margin bottom etc.
-$vert-line-height: $line-height * 1em;
-
 body,
 button,
 input,
 select,
 textarea {
 	color: palette(mono);
-	font-family: $font-sans;
+	font-family: $font-custom;
 	font-weight: normal;
 	line-height: $line-height;
 }
 
 a {
 	@include transition( all 250ms ease );
-	border-bottom: 3px solid palette(mono, 10);
 	color: palette(mono, 75);
 	text-decoration: none;
 
 	@include touch-hover() {
-		border-bottom-color: palette(mono, 25);
 		color: palette(brand);
 		text-decoration: none;
 	}
