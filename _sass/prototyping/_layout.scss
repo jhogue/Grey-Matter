@@ -1,0 +1,10 @@
+.layout {
+
+  &--container {
+    @include outer-container();
+  }
+
+  &--content {
+    padding: 0 $page-gutter;
+  }
+}
