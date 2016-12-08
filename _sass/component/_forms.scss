@@ -17,7 +17,8 @@ fieldset {
 
 label {}
 
-#{$all-text-inputs} {
+#{$all-text-inputs},
+textarea {
 	@include transition( all 250ms ease );
 	border: $form-input-border-width solid $form-input-border-color;
 	box-sizing: border-box; // Declare explicitly, as form elements do not inherit from HTML declaration in iOS and Android
@@ -31,7 +32,7 @@ label {}
 		font-style: italic;
 	}
 
-	@include touch-hover() {
+	@include touch-hover('hover') {
 		border-color: darken($form-input-border-focus, 10%);
 		outline: none;
 	}
@@ -45,8 +46,10 @@ label {}
 	}
 }
 
-#{$all-text-inputs-focus} {
+#{$all-text-inputs-focus},
+textarea {
 	color: $form-input-color;
+	border-color: $form-input-border-focus;
 }
 
 textarea {
@@ -66,13 +69,18 @@ select {
 	width: 100%;
 }
 
-input[type="checkbox"],
-input[type="radio"] {}
-
 input[type="file"] {
 	line-height: 1;
 }
 
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  width: auto;
+}
 
 // ! ===== Special rules for older Safari and iOS =====
 input[type="search"],
