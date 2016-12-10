@@ -7,7 +7,7 @@ select,
 textarea {
 	color: palette(mono);
 	font-family: $font-custom;
-	font-weight: normal;
+	font-weight: $font-weight-normal;
 	line-height: $line-height;
 }
 
@@ -60,7 +60,7 @@ h1,
 h2,
 .bravo {
 	@include one-element-size(h2);
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 }
 
 h3,
@@ -78,7 +78,7 @@ h4,
 h5,
 .echo {
 	@extend %base-rwd-size;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	letter-spacing: .03125em;
 	text-transform: uppercase;
 }
@@ -86,7 +86,7 @@ h5,
 h6,
 .foxtrot {
 	@extend %base-rwd-size;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 }
 
 p,
@@ -129,7 +129,7 @@ blockquote {
 		font-family: $font-serif;
 		font-size: rem(48);
 		font-style: italic;
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 		line-height: 1;
 	}
 
@@ -191,7 +191,7 @@ dd {
 
 dt {
 	border-bottom: 1px solid $color-borders;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 }
 
 dd { border-bottom: 2px solid $color-borders; }
@@ -207,7 +207,7 @@ table {
 
 	th {
 		border-bottom: 2px solid $table-border-color;
-		font-weight: 700;
+		font-weight: $font-weight-bold;
 		padding: $table-cell-padding;
 		text-align: left;
 	}
@@ -260,13 +260,13 @@ dfn[title] { cursor: help; }
 
 abbr[title] {
 	font-size: 75%;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	letter-spacing: 0.125em;
 	text-transform: uppercase;
 }
 
 b,
-strong { font-weight: 700; }
+strong { font-weight: $font-weight-bold; }
 
 i,
 em,

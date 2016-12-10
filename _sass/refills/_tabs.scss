@@ -53,7 +53,7 @@
     border-top: $tab-border;
     color: $dark-gray;
     display: block;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     padding: ($base-spacing / 2) ($gutter / 2);
     text-decoration: none;
 

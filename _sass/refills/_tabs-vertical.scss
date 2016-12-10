@@ -48,7 +48,7 @@
     @include media($vertical-tab-mode) {
       border-bottom: $tab-border;
       display: block;
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       margin-right: -1px;
       padding: ($base-spacing / 2) ($gutter / 2);
 
@@ -103,7 +103,7 @@
     border-top: $tab-border;
     cursor: pointer;
     display: block;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     padding: $base-spacing / 2 $gutter / 2;
 
     &:focus,
