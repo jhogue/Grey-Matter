@@ -28,7 +28,7 @@ Reasons to use a Jekyll Wireframe System
 * Built-in local development, fast and easy `rake serve` command compiled HTML and CSS.
 * Supports `.md` as well as `.html` or `.xml` files. Mix and match as needed. 
 * Supports partials for repetitive elements, like header, footer and navigation. 
-* Written with a clean and unobtrusive `{{ double brace }}` syntax.
+* Written with a clean and unobtrusive {% raw %}`{{ double brace }}`{% endraw %} syntax.
 * Supports typical `if/else`, `for`, and `while` directives. 
 * [Has many built in output filters](https://gist.github.com/smutnyleszek/9803727#output) to sort arrays and filter strings.
 * Supports a simple date-based blog. [More details here](https://jekyllrb.com/docs/posts/). [Jekyll even supports the idea of Draft posts!](https://jekyllrb.com/docs/drafts/)
@@ -40,10 +40,15 @@ Reasons to use a Jekyll Wireframe System
 You like? Then [check out Jekyll Bootstrap](http://jekyllbootstrap.com) for some neat ways to make an entire site with Jekyll and serve it on Github pages or your own server. 
 
 ## Cool things Jekyll templating tags do
-_Samples shown in comment syntax to avoid being executed. Replace `#` symbols with `%`._
 
 The `unless` tag in a `forloop`: 
 
 {% highlight ERB %}
-<a href="{{  file.url }}" >{{ file.name }}</a>{# unless forloop.last #}, {# endunless #}
+{% raw %}
+<a href="{{  file.url }}" >{{ file.name }}</a>{% unless forloop.last %}, {% endunless %}
+{% endraw %}
 {% endhighlight %}
+
+Forloops also support first and last built in (no counter needed!) as seen above. 
+
+Dump a whole variable: `{{ variable | json }}`. Supports 

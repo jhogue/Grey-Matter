@@ -1,7 +1,7 @@
 	<div class="mainnav">
 		<nav class="mainnav--wrapper">
 			<ul class="mainnav--list">
-				{% for node in site.pages %}
+				{% for node in site.pages | sort:'nav-title' %}
 					{% unless node.permalink == '/' %}
 				<li class="mainnav--list--item"><a href="{{ site.baseurl}}{{ node.permalink }}" class="mainnav--link{% if page.url == node.url %} mainnav--link__disabled{% endif %}">{% if node.nav-title %}{{ node.nav-title }}{% else %}{{ node.title }}{% endif %}</a></li>
 				  {% endunless %}
