@@ -6,7 +6,7 @@ require 'yaml'
 require 'tmpdir'
 require 'jekyll'
 
-task :default => :server
+task :default => :serve
 
 desc 'Build site with Jekyll'
 task :build do
