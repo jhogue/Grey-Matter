@@ -2,13 +2,13 @@
 // Most variables are localized at the top of the file from which they are first used
 
 // Global font declarations
-$font-sans: $helvetica;
+$font-sans: 'Source Sans Pro', $helvetica;
 $font-serif: $georgia;
-$font-mono: $monospace;
+$font-mono: 'Source Code Pro', $monospace;
 
-$font-custom: 'Roboto Mono', $font-sans;
+$font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 700;
+$font-weight-bold: 900;
 
 // Copy
 $paragraph: 1em;

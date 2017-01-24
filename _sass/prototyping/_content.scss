@@ -57,6 +57,8 @@
       width: 33%;
       
       textarea {
+        color: $color-code;
+        font-family: $font-mono;
         font-size: 87.5%;
         min-height: 12rem;
       }

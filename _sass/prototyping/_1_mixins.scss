@@ -46,3 +46,14 @@
   color: palette(mono, 75);
   padding: $page-gutter;
 }
+
+//
+// Extending Bourbon
+// Writing Modes
+// @usage: @include writing-mode(vertical-rl);
+// @outputs: -webkit-writing-mode: vertical-rl; ms-writing-mode: vertical-rl; writing-mode: vertical-rl;
+// @uses: Bourbons prefixer() mixin
+//
+@mixin writing-mode($mode) {
+  @include prefixer(writing-mode, $mode, webkit ms spec);
+}
