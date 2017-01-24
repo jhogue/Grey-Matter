@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Oomph-Jewel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  x="0" y="0" 
+  width="900" height="900" 
+  viewBox="0 0 900 900" 
+  xml:space="preserve">
+  <style>
+     /* Not supported in IE browsers or Opera */
+     #black-overlay { mix-blend-mode: multiply; }
+  </style>
+  <defs>
+    <polygon id="outer_shape" points="0,0 728.488,88.849 900,20.054 900,900 0,900"/>
+    <clipPath id="clipped_by">
+      <use xlink:href="#outer_shape"  overflow="visible"/>
+    </clipPath>
+  </defs>
+  <svg id="background-and-white-right"
+    x="0px" y="0px" 
+    width="900px" height="900px" 
+    viewBox="0 0 900 900" 
+    preserveAspectRatio="xMaxYMin slice"
+    clip-path="url(#clipped_by)">
+    <g id="background">
+      <rect x="-5" y="-5" fill="#D52F26" width="910" height="910"/>
+    </g>
+    <g id="white-overlay-right">
+      <polygon fill="#E03028" shape-rendering="crispEdges" points="728.957,88.903 900,681 900,-7.496"/>
+    </g>
+  </svg>
+  <svg id="background-and-white-and-black-left"
+    x="0px" y="0px" 
+    width="900px" height="900px" 
+    viewBox="0 0 900 900" 
+    preserveAspectRatio="xMinYMin slice"
+    clip-path="url(#clipped_by)">
+    <g id="white-overlay-left">
+      <polygon fill="#E03028" shape-rendering="crispEdges" points="-1,147.111 -1,900 836,900"/>
+    </g>
+    <g id="black-overlay">
+      <polygon clip-path="url(#clipped_by)" fill="#E6E6E6" shape-rendering="crispEdges" points="0,737 189.729,-16 0,-16"/>
+    </g>
+  </svg>
+</svg>

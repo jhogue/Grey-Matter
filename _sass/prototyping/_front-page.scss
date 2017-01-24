@@ -1,0 +1,79 @@
+.container {
+	padding: 0 1em;
+}
+
+.section {
+
+	&__title {
+		font-family: $font-serif;
+		font-size: 2em;
+		line-height: 1;
+		margin-bottom: .3em;
+
+		em {
+			font-family: $font-italic;
+			font-size: 2em;
+		}
+	}
+
+  &__label {
+    @include writing-mode(vertical-rl);
+    @include transform( rotate(180deg) );
+    @include transform-origin(top);
+    font-size: 1em;
+    font-weight: 600;
+    float: right;
+    letter-spacing: 0.25em;
+    padding: 0 2em; // fun fact: padding is still as you might expect, it has not been rotated
+    text-align: right;
+    text-transform: uppercase;
+
+    &--vert {
+
+    }
+  }
+}
+
+.site-nav {
+	position: absolute;
+	z-index: 1;
+
+	&__svg {
+		padding: 1em;
+	}
+}
+
+.banner {
+	position: relative;
+
+	&__header {
+		position: absolute;
+		top: 15%;
+	}
+
+	&__title,
+	&__subtitle {
+		color: palette(mono, white);
+	}
+
+	&__subtitle {
+		font-weight: $font-weight-bold;
+		letter-spacing: .08rem;
+		text-transform: uppercase;
+
+		&:before {
+			content: '—';
+			color: palette(brand, base);
+			margin-right: .5em;
+		}
+	}
+
+	&__svg__inner .button {
+		color: palette(mono, white);
+	}
+}
+
+.recentwork {
+  position: relative;
+  z-index: 3; // one more than the follow element above
+}

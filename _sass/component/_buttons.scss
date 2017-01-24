@@ -3,12 +3,11 @@
 // Remove and edit styles as needed. This basic idea provides three button styles
 // Can easily be expanded to accomodate more
 
-$form-button-background-default: palette(mono, 10);
-$form-button-color-default: palette(mono, 66);
-$form-button-border-color-default: palette(mono, 33);
-$form-button-border-width: 1px;
-$form-button-border-radius: $default-border-radius;
-$form-button-padding: .625em 1em .5em;
+$button-background-default: transparent;
+$button-color-default: palette(mono, 75);
+$button-border-color-default: palette(brand, teal);
+$button-border-width: 2px;
+$button-padding: .75em 2em;
 
 //
 // Usage: @include button()
@@ -17,23 +16,25 @@ $form-button-padding: .625em 1em .5em;
 // Authors: The Oomph Team
 //
 @mixin button($type:default) {
-  border: $form-button-border-width solid $form-button-border-color-default;
-  border-radius: $form-button-border-radius;
+  border: $button-border-width solid $button-border-color-default;
   display: inline-block;
-  padding: $form-button-padding;
+  font-weight: $font-weight-bold;
+  letter-spacing: .15rem;
+
+  padding: $button-padding;
   text-transform: uppercase;
 
   // Default styles are light grey, hover to darker grey
   @if $type == 'default' {
 
     @include touch-hover('idle') {
-      background-color: $form-button-background-default;
-      color: $form-button-color-default;
+      background-color: $button-background-default;
+      color: $button-color-default;
     }
 
     @include touch-hover('hover') {
-      background-color: darken($form-button-background-default, 8%);
-      color: lighten($form-button-color-default, 8%);
+      background-color: darken($button-background-default, 8%);
+      color: lighten($button-color-default, 8%);
       cursor: pointer;
     }
   }
@@ -45,7 +46,7 @@ $form-button-padding: .625em 1em .5em;
       border-color: darken(palette(brand), 8%);
       color: palette(mono, 10);
     }
-  
+
     @include touch-hover('hover') {
       background-color: palette(brand, dark);
       color: palette(mono, white);
@@ -67,7 +68,7 @@ $form-button-padding: .625em 1em .5em;
   }
 }
 
-// Classes can be used independently: 
+// Classes can be used independently:
 // class="button", or class="button--primary"
 .button {
   @include button();
