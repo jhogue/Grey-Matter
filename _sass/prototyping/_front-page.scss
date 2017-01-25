@@ -1,20 +1,21 @@
 .container {
-	padding: 0 1em;
+  padding: 0 1em;
 }
 
 .section {
 
-	&__title {
-		font-family: $font-serif;
-		font-size: 2em;
-		line-height: 1;
-		margin-bottom: .3em;
+  &__title {
+    font-family: $font-serif;
+    font-size: 2em;
+		font-weight: $font-weight-normal;
+    line-height: 1;
+    margin-bottom: .3em;
 
-		em {
-			font-family: $font-italic;
-			font-size: 2em;
-		}
-	}
+    em {
+      font-family: $font-italic;
+      font-size: 2em;
+    }
+  }
 
   &__label {
     @include writing-mode(vertical-rl);
@@ -35,45 +36,149 @@
 }
 
 .site-nav {
-	position: absolute;
-	z-index: 1;
+  position: absolute;
+  z-index: 1;
 
-	&__svg {
-		padding: 1em;
+  &__svg {
+    padding: 1em;
+  }
+}
+
+// Group declarations
+
+.banner__subtitle,
+.expertise__categories {
+	font-weight: $font-weight-bold;
+	letter-spacing: .08rem;
+	text-transform: uppercase;
+
+	&:before {
+		content: '—';
+		font-weight: $font-weight-extra-bold;
+		margin-right: .5em;
 	}
 }
 
+// Section declarations
+
 .banner {
-	position: relative;
+  position: relative;
 
-	&__header {
-		position: absolute;
-		top: 15%;
+  &__header {
+    position: absolute;
+    top: 15%;
+  }
+
+  &__title,
+  &__subtitle {
+    color: palette(mono, white);
+  }
+
+  &__subtitle {
+
+    &:before {
+      color: palette(brand, base);
+    }
+  }
+
+  &__svg__inner .button {
+    color: palette(mono, white);
+  }
+}
+
+.recent-work {
+  position: relative;
+  z-index: 3; // one more than .banner__svg__follow
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  &__client {
+    font-weight: $font-weight-bold;
+    margin-bottom: .5em;
+  }
+
+  &__copy {
+    font-family: $font-serif;
+  }
+
+  &__link {
+    border-right: 2px solid palette(brand, teal);
+    color: palette(brand, teal);
+    padding: .5em 2em .5em 0;
+    text-transform: uppercase;
+
+    @include touch-hover() {
+      color: palette(brand, base);
+    }
+  }
+
+	img:first-of-type {
+		max-width: 175%;
 	}
+}
 
-	&__title,
-	&__subtitle {
+.expertise {
+	background: palette(brand, denim);
+
+	&__title {
 		color: palette(mono, white);
+		padding: 3em 0 2em;
 	}
 
-	&__subtitle {
-		font-weight: $font-weight-bold;
-		letter-spacing: .08rem;
-		text-transform: uppercase;
+	&__row {
+		@include display(flex);
+		padding-bottom: 2em;
+	}
 
-		&:before {
-			content: '—';
-			color: palette(brand, base);
+	&__column {
+		width: 50%;
+
+		&:first-child {
 			margin-right: .5em;
+		}
+
+		&:last-child {
+			margin-left: .5em;
 		}
 	}
 
-	&__svg__inner .button {
+	&__categories {
 		color: palette(mono, white);
-	}
-}
 
-.recentwork {
-  position: relative;
-  z-index: 3; // one more than the follow element above
+		&:before {
+			color: palette(brand, teal);
+		}
+	}
+
+	&__areas {
+		color: palette(mono, white);
+		font-family: $font-serif;
+		margin-bottom: 1.5em;
+		padding-bottom: 1em;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid lighten(palette(brand, denim), 8%);
+		}
+	}
+
+	&__examples {
+		background: palette(brand, teal);
+
+		.expertise__categories {
+			padding: 5em 0 2em;
+
+			&:before {
+				color: palette(brand, blue);
+			}
+		}
+
+		.expertise__areas {
+
+			&:not(:last-child) {
+				border-bottom: 1px solid lighten(palette(brand, teal), 15%);
+			}
+		}
+	}
 }
