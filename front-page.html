@@ -27,7 +27,7 @@ permalink: home/
 
 <section id="recent-work" class="recent-work">
   <div class="section__label section__label--vert">Case Studies</div>
-  <div class="recent-work container">
+  <div class="recent-work__showcase container">
     <h2 class="section__title recent-work__title">Made<br /><em>Recently</em></h2>
     <h3 class="recent-work__client">Leica Geosystems</h3>
     <p class="recent-work__copy">
@@ -48,7 +48,7 @@ permalink: home/
 </section>
 
 <section id="expertise" class="expertise">
-	<div class="container">
+	<div class="expertise__top container">
 		<h2 class="section__title expertise__title">Made to <em>Order</em></h2>
 		<div class="expertise__row">
 			<div class="expertise__column">
@@ -84,7 +84,7 @@ permalink: home/
 		</div>
 	</div>
 	<div class="expertise__examples">
-		<div class="container">
+		<div class="expertise__bottom container">
 			<p class="expertise__categories">Typical Projects</p>
 			<div class="expertise__row">
 				<div class="expertise__column">
@@ -104,7 +104,7 @@ permalink: home/
 
 <section id="thinking" class="thinking">
 	<div class="section__label section__label--vert">From the Blog</div>
-	<div class="container">
+	<div class="thinking__blog container">
 		<h2 class="section__title thinking__title"><em>Thinking about</em><br /> Making</h2>
 
 		<div class="thinking__post">
@@ -137,50 +137,22 @@ permalink: home/
 			<!-- This block's styles come from _notes.scss -->
 			<div class="blog-post--content">
 				<div class="blog-post--meta">
-					<!-- <span class="blog-post--meta--category"><a href="<?php echo esc_url( home_url( "/notes/topic/{$category->slug}" ) ); ?>"><?php echo esc_html( $category->name ); ?></a></span><span class="separator">|</span><span class="blog-post--meta--date"><?php the_date(); ?></span> -->
 					<span class="blog-post--meta--category"><a href="#">Strategy</a></span><span class="separator">|</span><span class="blog-post--meta--date">November 18, 2016</span>
 				</div>
 				<div class="blog-post--excerpt">
-					<!-- <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-					<?php the_excerpt(); ?> -->
 					<h1><a href="#" rel="bookmark" title="">What Marketers Need to Know About Site Security</a></h1>
 					<p>
 						If you're working in an industry that handles information relating to health care, there's a good chance your organization has strict security...
 					</p>
 				</div>
 				<div class="blog-post--author">
-					<!-- <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-					<span>by <a href="<?php echo esc_url( home_url( "/people/{$author_shortname}" ) ); ?>"><?php echo esc_html( the_author_meta( 'display_name' ) ); ?></a></span> -->
 					<img alt="" src="https://secure.gravatar.com/avatar/d2ba302be59477e639fae93a881a14a1?s=50&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/d2ba302be59477e639fae93a881a14a1?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">
 					<span>by <a href="#">Christopher Murray</a></span>
 				</div>
 			</div>
 		</div>
 
-		<div class="thinking__post">
-
-			<!-- This block's styles come from _notes.scss -->
-			<div class="blog-post--content">
-				<div class="blog-post--meta">
-					<!-- <span class="blog-post--meta--category"><a href="<?php echo esc_url( home_url( "/notes/topic/{$category->slug}" ) ); ?>"><?php echo esc_html( $category->name ); ?></a></span><span class="separator">|</span><span class="blog-post--meta--date"><?php the_date(); ?></span> -->
-					<span class="blog-post--meta--category"><a href="#">Strategy</a></span><span class="separator">|</span><span class="blog-post--meta--date">November 18, 2016</span>
-				</div>
-				<div class="blog-post--excerpt">
-					<!-- <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-					<?php the_excerpt(); ?> -->
-					<h1><a href="#" rel="bookmark" title="">What Marketers Need to Know About Site Security</a></h1>
-					<p>
-						If you're working in an industry that handles information relating to health care, there's a good chance your organization has strict security...
-					</p>
-				</div>
-				<div class="blog-post--author">
-					<!-- <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-					<span>by <a href="<?php echo esc_url( home_url( "/people/{$author_shortname}" ) ); ?>"><?php echo esc_html( the_author_meta( 'display_name' ) ); ?></a></span> -->
-					<img alt="" src="https://secure.gravatar.com/avatar/d2ba302be59477e639fae93a881a14a1?s=50&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/d2ba302be59477e639fae93a881a14a1?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">
-					<span>by <a href="#">Christopher Murray</a></span>
-				</div>
-			</div>
-		</div>
+		<a href="#" class="button">Load More Posts</a>
 
 	</div>
 </section>

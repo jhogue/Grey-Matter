@@ -47,10 +47,15 @@
 // Group declarations
 
 .banner__subtitle,
-.expertise__categories {
+.expertise__categories,
+.recent-work__link {
 	font-weight: $font-weight-bold;
 	letter-spacing: .08rem;
 	text-transform: uppercase;
+}
+
+.banner__subtitle,
+.expertise__categories {
 
 	&:before {
 		content: '—';
@@ -59,19 +64,25 @@
 	}
 }
 
+.expertise,
+.thinking {
+	padding: 4em 0;
+}
+
 // Section declarations
 
 .banner {
   position: relative;
 
+	&__title,
+	&__subtitle,
+	&__svg__inner .button {
+		color: palette(mono, white);
+	}
+
   &__header {
     position: absolute;
     top: 15%;
-  }
-
-  &__title,
-  &__subtitle {
-    color: palette(mono, white);
   }
 
   &__subtitle {
@@ -79,10 +90,6 @@
     &:before {
       color: palette(brand, base);
     }
-  }
-
-  &__svg__inner .button {
-    color: palette(mono, white);
   }
 }
 
@@ -104,12 +111,14 @@
   }
 
   &__link {
-    border-right: 2px solid palette(brand, teal);
-    color: palette(brand, teal);
-    padding: .5em 2em .5em 0;
-    text-transform: uppercase;
+		border-right: 2px solid palette(brand, teal);
+		padding: .5em 2em .5em 0;
 
-    @include touch-hover() {
+		@include touch-hover('idle') {
+	    color: palette(brand, teal);
+		}
+
+    @include touch-hover('hover') {
       color: palette(brand, base);
     }
   }
@@ -121,10 +130,16 @@
 
 .expertise {
 	background: palette(brand, denim);
+	padding-bottom: 0;
+
+	&__title,
+	&__categories,
+	&__areas {
+		color: palette(mono, white);
+	}
 
 	&__title {
-		color: palette(mono, white);
-		padding: 3em 0 2em;
+		margin-bottom: 2em;
 	}
 
 	&__row {
@@ -145,7 +160,6 @@
 	}
 
 	&__categories {
-		color: palette(mono, white);
 
 		&:before {
 			color: palette(brand, teal);
@@ -153,7 +167,6 @@
 	}
 
 	&__areas {
-		color: palette(mono, white);
 		font-family: $font-serif;
 		margin-bottom: 1.5em;
 		padding-bottom: 1em;
@@ -163,7 +176,7 @@
 		}
 	}
 
-	&__examples {
+	&__bottom {
 		background: palette(brand, teal);
 
 		.expertise__categories {
@@ -187,13 +200,15 @@
 
 	.section__label {
 		margin-bottom: -5em;
-		margin-top: 4em;
+	}
+
+	&__blog {
+		text-align: center;
 	}
 
 	&__title {
 		line-height: 1.25;
 		margin-bottom: 1.5em;
-		text-align: center;
 
 		em {
 			font-size: inherit;
@@ -202,7 +217,8 @@
 	}
 
 	&__post {
-		box-shadow: 0 0 20px 2px palette(mono, 10);
+		box-shadow: $default-box-shadow;
 		margin-bottom: 2em;
+		text-align: left;
 	}
 }
