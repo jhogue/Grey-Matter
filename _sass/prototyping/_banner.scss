@@ -41,10 +41,10 @@ h1 {
  */
 $texture-height: 50;
 .banner {
-  margin-bottom: - ($texture-height/2) * 1vw;
+  margin-bottom: -35vw;
 
   &__svg {
-    background: top left no-repeat url('../img/SVG-exploration.svg') transparent;
+    background: top left no-repeat url('../img/oomph-jewel-render.svg') transparent;
     background-size: cover;
     //height: 0;
     margin-top: -10%;
@@ -55,7 +55,7 @@ $texture-height: 50;
 
     &__inner {
       @include fluid-type(padding-top, 5em, 12em, em(480), em(1200));
-      @include fluid-type(padding-bottom, 3em, 8em, em(480), em(1200));
+      @include fluid-type(padding-bottom, 5em, 12em, em(480), em(1200));
       @include fluid-type(padding-left padding-right, 2em, 5em, em(480), em(1200));
       color: palette(mono, white);
       font-weight: 500;
