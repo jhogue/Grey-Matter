@@ -45,7 +45,8 @@
 .banner__subtitle,
 .expertise__categories,
 .recent-work__link,
-.take-action__lead-in {
+.take-action__lead-in,
+.footer__nav__categories {
 	font-weight: $font-weight-bold;
 	letter-spacing: .08rem;
 	text-transform: uppercase;
@@ -62,7 +63,8 @@
 }
 
 .expertise,
-.thinking {
+.thinking,
+.v3footer {
 	padding: 4em 0;
 }
 
@@ -262,6 +264,51 @@
 
 		@include touch-hover('hover') {
 			color: palette(mono, base);
+		}
+	}
+}
+
+.v3footer { // so named to avoid conflict with /refills/_footer.scss stuff
+	background: palette(mono, 10);
+
+	&__nav {
+
+		&__row {
+			@include display(flex);
+			padding-bottom: 2em;
+		}
+
+		&__column {
+			width: 48%;
+
+			p:last-of-type {
+				margin-top: 2.5em;
+			}
+
+			&:first-child {
+				margin-right: 4%;
+			}
+		}
+
+		&__categories {
+			color: palette(brand, base);
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+		}
+
+		&__links {
+			display: block;
+			font-family: $font-serif;
+			font-size: 2em;
+			margin-bottom: 0;
+
+			@include touch-hover('idle') {
+				color: palette(mono, base);
+			}
+
+			@include touch-hover('hover') {
+				color: palette(brand, teal);
+			}
 		}
 	}
 }
