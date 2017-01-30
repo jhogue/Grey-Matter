@@ -4,6 +4,7 @@ nav-title: Home
 permalink: home/
 ---
 
+<!-- This is here just for prototyping. We would use same nav in place on site now, just styled differently -->
 <section class="site-nav" role="navigation">
 	<div class="site-nav__svg">
 		<img src="../assets/img/oomph_wordmark_white.svg">
@@ -23,10 +24,10 @@ permalink: home/
     </div>
   </div>
   <div class="banner__svg__follow"></div>
-</section>
+</section><!-- .banner -->
 
 <section id="recent-work" class="recent-work">
-  <div class="section__label section__label--vert">Case Studies</div>
+  <div class="section__label section__label">Case Studies</div>
   <div class="recent-work__showcase container">
     <h2 class="section__title recent-work__title">Made<br /><em>Recently</em></h2>
     <h3 class="recent-work__client">Leica Geosystems</h3>
@@ -45,7 +46,7 @@ permalink: home/
 		<a href="#" class="recent-work__link">View More</a>
 		<img src="../assets/img/screens-leica1.png">
 	</div>
-</section>
+</section><!-- .recent-work -->
 
 <section id="expertise" class="expertise">
 	<div class="expertise__top container">
@@ -100,16 +101,14 @@ permalink: home/
 			</div>
 		</div>
 	</div>
-</section>
+</section><!-- .expertise -->
 
 <section id="thinking" class="thinking">
-	<div class="section__label section__label--vert">From the Blog</div>
+	<div class="section__label section__label">From the Blog</div>
 	<div class="thinking__blog container">
-		<h2 class="section__title thinking__title"><em>Thinking about</em><br /> Making</h2>
-
+		<h2 class="section__title thinking__title"><em>Thinking about </em><br />Making</h2>
 		<div class="thinking__post">
-
-			<!-- This block's styles come from _notes.scss -->
+			<!-- This block's styles come from _notes.scss, which is copied from main repo -->
 			<div class="blog-post--content">
 				<div class="blog-post--meta">
 					<!-- <span class="blog-post--meta--category"><a href="<?php echo esc_url( home_url( "/notes/topic/{$category->slug}" ) ); ?>"><?php echo esc_html( $category->name ); ?></a></span><span class="separator">|</span><span class="blog-post--meta--date"><?php the_date(); ?></span> -->
@@ -131,10 +130,8 @@ permalink: home/
 				</div>
 			</div>
 		</div>
-
+		<!-- Repeat the above just for illustration -->
 		<div class="thinking__post">
-
-			<!-- This block's styles come from _notes.scss -->
 			<div class="blog-post--content">
 				<div class="blog-post--meta">
 					<span class="blog-post--meta--category"><a href="#">Strategy</a></span><span class="separator">|</span><span class="blog-post--meta--date">November 18, 2016</span>
@@ -151,8 +148,17 @@ permalink: home/
 				</div>
 			</div>
 		</div>
-
 		<a href="#" class="button">Load More Posts</a>
+	</div>
+</section><!-- .thinking -->
 
+<section id="take-action" class="take-action">
+	<div class="take-action__content container">
+		<p class="take-action__lead-in">So What's Next?</p>
+		<h2 class="section__title take-action__title">Let's <em>Make it Great</em></h2>
+		<p class="take-action__copy">
+			Oomph works best when we work together. Tell us a little now and let's start a conversation about your project.
+		</p>
+		<a href="#" class="take-action__link">Tell Us About Your Project</a>
 	</div>
 </section>

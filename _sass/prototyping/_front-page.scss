@@ -28,10 +28,6 @@
     padding: 0 1em; // fun fact: padding is still as you might expect, it has not been rotated
     text-align: right;
     text-transform: uppercase;
-
-    &--vert {
-
-    }
   }
 }
 
@@ -48,7 +44,8 @@
 
 .banner__subtitle,
 .expertise__categories,
-.recent-work__link {
+.recent-work__link,
+.take-action__lead-in {
 	font-weight: $font-weight-bold;
 	letter-spacing: .08rem;
 	text-transform: uppercase;
@@ -220,5 +217,51 @@
 		box-shadow: $default-box-shadow;
 		margin-bottom: 2em;
 		text-align: left;
+	}
+}
+
+.take-action {
+	background: top left no-repeat url('../../assets/img/sample-video-still.jpg');
+	background-size: cover;
+
+	&__title,
+	&__copy {
+		color: palette(mono, white);
+	}
+
+	&__content {
+		padding-top: 9em;
+		padding-bottom: 8em;
+	}
+
+	&__lead-in {
+		color: palette(brand, base);
+	}
+
+	&__title {
+		margin: 1.5em 0 .75em;
+
+		em {
+			font-size: inherit;
+			font-weight: $font-weight-extra-bold;
+		}
+	}
+
+	&__copy {
+		font-family: $font-serif;
+		margin-bottom: 1em;
+	}
+
+	&__link {
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+
+		@include touch-hover('idle') {
+			color: palette(mono, 15);
+		}
+
+		@include touch-hover('hover') {
+			color: palette(mono, base);
+		}
 	}
 }
