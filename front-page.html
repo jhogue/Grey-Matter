@@ -19,7 +19,7 @@ permalink: home/
   </div>
   <div class="banner__svg">
     <div class="banner__svg__inner">
-      <p>Oomph is a group of strategists, designers and engineers who create lasting impressions, develop responsive experiences and foster enduring relationships.</p>
+      <p class="banner__svg__inner__copy">Oomph is a group of strategists, designers and engineers who create lasting impressions, develop responsive experiences and foster enduring relationships.</p>
       <a href="#" class="button">Learn More</a>
     </div>
   </div>
@@ -27,7 +27,7 @@ permalink: home/
 </section><!-- .banner -->
 
 <section id="recent-work" class="recent-work">
-  <div class="section__label section__label">Case Studies</div>
+  <div class="section__label recent-work__label">Case Studies</div>
   <div class="recent-work__showcase container">
     <h2 class="section__title recent-work__title">Made<br /><em>Recently</em></h2>
     <h3 class="recent-work__client">Leica Geosystems</h3>
@@ -38,7 +38,8 @@ permalink: home/
 		<img src="../assets/img/screens-leica1.png">
 		<img src="../assets/img/web-layout-leica.png">
   </div>
-	<div class="recent-work container">
+	<div class="recent-work__arrow-separator"></div>
+	<div class="recent-work__showcase container">
 		<h3 class="recent-work__client">United Way of Rhode Island</h3>
 		<p class="recent-work__copy">
 			Learn how United Way of Rhode Island transformed the digital experience using user-focused design that's inspiring volunteers.
@@ -104,7 +105,7 @@ permalink: home/
 </section><!-- .expertise -->
 
 <section id="thinking" class="thinking">
-	<div class="section__label section__label">From the Blog</div>
+	<div class="section__label thinking__label">From the Blog</div>
 	<div class="thinking__blog container">
 		<h2 class="section__title thinking__title"><em>Thinking about </em><br />Making</h2>
 		<div class="thinking__post">
@@ -178,6 +179,9 @@ permalink: home/
 				<a href="" class="v3footer__nav__links">Strategy &amp; Support</a>
 				<a href="" class="v3footer__nav__links">Design &amp; UX</a>
 				<a href="" class="v3footer__nav__links">Development</a>
+
+				<div class="section__label v3footer__nav__label">Made In <em>Providence</em></div>
+
 			</div>
 			<div class="v3footer__nav__column">
 				<p class="v3footer__nav__categories">Work</p>
@@ -188,13 +192,25 @@ permalink: home/
 				<a href="" class="v3footer__nav__links">Company</a>
 				<a href="" class="v3footer__nav__links">Blog</a>
 				<a href="" class="v3footer__nav__links">Contact Us</a>
+
+				<img src="" style="height:450px;" /><!-- building illustration -->
 			</div>
 		</div>
 	</div>
-	<div class="v3footer__newsletter container">
 
+	<div class="v3footer__newsletter container">
+		<h2 class="section__title v3footer__newsletter__title">Insights, News &amp; Case Studies</h2>
+		<p class="v3footer__newsletter__copy">Sign up to receive regular updates.</p>
+		<form action="">
+		  <input type="email" name="email" placeholder="Email address">
+		  <input type="submit" value="Subscribe" class="button">
+		</form>
 	</div>
 	<div class="v3footer__identification container">
-
+		<img src="../assets/img/oomph_wordmark_red.svg">
+		<p class="v3footer__identification__copy">&copy; 2017 Oomph Inc.</p>
+		<p class="v3footer__identification__copy">401-228-7660</p>
+		<p class="v3footer__identification__copy">72 Clifford St., Providence, RI 02903</p>
+		<p class="v3footer__identification__copy"><a href="#">Privacy Policy</a></p>
 	</div>
 </footer>

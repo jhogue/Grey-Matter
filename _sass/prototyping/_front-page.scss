@@ -4,30 +4,30 @@
 
 .section {
 
+  &__label {
+    @include writing-mode(vertical-rl);
+    @include transform( rotate(180deg) );
+    color: palette(mono, 90);
+    font-size: 1rem;
+    font-weight: 600;
+    float: right;
+    letter-spacing: 0.25em;
+    margin-bottom: -2em;
+    padding: 0 1em; // fun fact: padding is still as you might expect, it has not been rotated
+    text-align: right;
+    text-transform: uppercase;
+  }
+
   &__title {
-    font-family: $font-serif;
-    font-size: 2em;
-		font-weight: $font-weight-normal;
+    color: palette(mono, 90);
+    font-size: 2rem;
+    font-weight: $font-weight-normal;
     line-height: 1;
     margin-bottom: .3em;
 
     em {
-      font-family: $font-italic;
-      font-size: 2em;
+      font-size: 4rem;
     }
-  }
-
-  &__label {
-    @include writing-mode(vertical-rl);
-    @include transform( rotate(180deg) );
-    font-size: 1em;
-    font-weight: 600;
-    float: right;
-    letter-spacing: 0.25em;
-		margin-bottom: -2em;
-    padding: 0 1em; // fun fact: padding is still as you might expect, it has not been rotated
-    text-align: right;
-    text-transform: uppercase;
   }
 }
 
@@ -42,30 +42,73 @@
 
 // Group declarations
 
+.banner__svg__inner__copy,
+.recent-work__copy,
+.expertise__areas,
+.thinking__post .blog-post--excerpt,
+.take-action__copy,
+.v3footer__newsletter__copy {
+  font-family: $font-serif;
+}
+
+.section__title,
+.v3footer__nav__links,
+.v3footer__nav__label em,
+.v3footer__newsletter__title {
+  font-family: $font-serif-2;
+}
+
+.banner__subtitle,
+.recent-work__client,
+.recent-work__link,
+.expertise__categories,
+.thinking__title em,
+.take-action__lead-in,
+.take-action__link,
+.v3footer__nav__categories {
+  font-weight: $font-weight-bold;
+}
+
+.take-action__title em {
+  font-weight: $font-weight-extra-bold;
+}
+
+.banner__title, .banner__subtitle, .banner__svg__inner .button,
+.expertise__title, .expertise__categories, .expertise__areas,
+.take-action__title, .take-action__copy {
+  color: palette(mono, white);
+}
+
+.banner__subtitle:before,
+.take-action__lead-in,
+.v3footer__nav__categories,
+.v3footer__nav__label {
+  color: palette(brand, base);
+}
+
 .banner__subtitle,
 .expertise__categories,
 .recent-work__link,
 .take-action__lead-in,
-.footer__nav__categories {
-	font-weight: $font-weight-bold;
-	letter-spacing: .08rem;
-	text-transform: uppercase;
+.v3footer__nav__categories {
+  letter-spacing: .08rem;
+  text-transform: uppercase;
 }
 
 .banner__subtitle,
 .expertise__categories {
 
-	&:before {
-		content: '—';
-		font-weight: $font-weight-extra-bold;
-		margin-right: .5em;
-	}
+  &:before {
+    content: '—';
+    font-weight: $font-weight-extra-bold;
+    margin-right: .5em;
+  }
 }
 
 .expertise,
 .thinking,
-.v3footer {
-	padding: 4em 0;
+.recent-work__arrow-separator {
+  padding: 4em 0;
 }
 
 // Section declarations
@@ -73,21 +116,15 @@
 .banner {
   position: relative;
 
-	&__title,
-	&__subtitle,
-	&__svg__inner .button {
-		color: palette(mono, white);
-	}
-
   &__header {
     position: absolute;
     top: 15%;
   }
 
-  &__subtitle {
+  &__svg__inner {
 
-    &:before {
-      color: palette(brand, base);
+    &__copy {
+      font-size: 1.15rem;
     }
   }
 }
@@ -96,219 +133,266 @@
   position: relative;
   z-index: 3; // one more than .banner__svg__follow
 
+  &__client,
+  &__copy {
+    color: palette(mono, 90);
+  }
+
   &__title {
     margin-bottom: 1em;
   }
 
   &__client {
-    font-weight: $font-weight-bold;
     margin-bottom: .5em;
   }
 
   &__copy {
-    font-family: $font-serif;
+    margin-bottom: 4em;
   }
 
   &__link {
-		border-right: 2px solid palette(brand, teal);
-		padding: .5em 2em .5em 0;
+    border-right: 2px solid palette(brand, teal);
+    padding: .5em 2em .5em 0;
 
-		@include touch-hover('idle') {
-	    color: palette(brand, teal);
-		}
+    @include touch-hover('idle') {
+      color: palette(brand, teal);
+    }
 
     @include touch-hover('hover') {
       color: palette(brand, base);
     }
   }
 
-	img:first-of-type {
-		max-width: 175%;
-	}
+  img:first-of-type {
+    max-width: 175%;
+  }
 }
 
 .expertise {
-	background: palette(brand, denim);
-	padding-bottom: 0;
+  background: palette(brand, denim);
+  padding-bottom: 0;
 
-	&__title,
-	&__categories,
-	&__areas {
-		color: palette(mono, white);
-	}
+  &__title {
+    margin-bottom: 2em;
+  }
 
-	&__title {
-		margin-bottom: 2em;
-	}
+  &__row {
+    @include display(flex);
+    padding-bottom: 2em;
+  }
 
-	&__row {
-		@include display(flex);
-		padding-bottom: 2em;
-	}
+  &__column {
+    width: 48%;
 
-	&__column {
-		width: 50%;
+    &:first-child {
+      margin-right: 4%;
+    }
+  }
 
-		&:first-child {
-			margin-right: .5em;
-		}
+  &__categories {
 
-		&:last-child {
-			margin-left: .5em;
-		}
-	}
+    &:before {
+      color: palette(brand, teal);
+    }
+  }
 
-	&__categories {
+  &__areas {
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
 
-		&:before {
-			color: palette(brand, teal);
-		}
-	}
+    &:not(:last-child) {
+      border-bottom: 1px solid lighten(palette(brand, denim), 8%);
+    }
+  }
 
-	&__areas {
-		font-family: $font-serif;
-		margin-bottom: 1.5em;
-		padding-bottom: 1em;
+  &__bottom {
+    background: palette(brand, teal);
 
-		&:not(:last-child) {
-			border-bottom: 1px solid lighten(palette(brand, denim), 8%);
-		}
-	}
+    .expertise__categories {
+      padding: 5em 0 2em;
 
-	&__bottom {
-		background: palette(brand, teal);
+      &:before {
+        color: palette(brand, blue);
+      }
+    }
 
-		.expertise__categories {
-			padding: 5em 0 2em;
+    .expertise__areas {
 
-			&:before {
-				color: palette(brand, blue);
-			}
-		}
-
-		.expertise__areas {
-
-			&:not(:last-child) {
-				border-bottom: 1px solid lighten(palette(brand, teal), 15%);
-			}
-		}
-	}
+      &:not(:last-child) {
+        border-bottom: 1px solid lighten(palette(brand, teal), 15%);
+      }
+    }
+  }
 }
 
 .thinking {
+  padding-bottom: 6em;
 
-	.section__label {
-		margin-bottom: -5em;
-	}
+  .section__label {
+    margin-bottom: -5em;
+  }
 
-	&__blog {
-		text-align: center;
-	}
+  &__blog {
+    text-align: center;
+  }
 
-	&__title {
-		line-height: 1.25;
-		margin-bottom: 1.5em;
+  &__title {
+    line-height: 1.25;
+    margin-bottom: 1.5em;
 
-		em {
-			font-size: inherit;
-			font-weight: $font-weight-extra-bold;
-		}
-	}
+    em {
+      font-size: inherit;
+    }
+  }
 
-	&__post {
-		box-shadow: $default-box-shadow;
-		margin-bottom: 2em;
-		text-align: left;
-	}
+  &__post {
+    box-shadow: $default-box-shadow;
+    margin-bottom: 2em;
+    text-align: left;
+  }
 }
 
 .take-action {
-	background: top left no-repeat url('../../assets/img/sample-video-still.jpg');
-	background-size: cover;
+  background: top left no-repeat url('../../assets/img/sample-video-still.jpg');
+  background-size: cover;
 
-	&__title,
-	&__copy {
-		color: palette(mono, white);
-	}
+  &__content {
+    padding-top: 9em;
+    padding-bottom: 8em;
+  }
 
-	&__content {
-		padding-top: 9em;
-		padding-bottom: 8em;
-	}
+  &__title {
+    margin: 1.5em 0 .75em;
 
-	&__lead-in {
-		color: palette(brand, base);
-	}
+    em {
+      font-size: inherit;
+    }
+  }
 
-	&__title {
-		margin: 1.5em 0 .75em;
+  &__copy {
+    margin-bottom: 1em;
+  }
 
-		em {
-			font-size: inherit;
-			font-weight: $font-weight-extra-bold;
-		}
-	}
+  &__link {
+    text-transform: uppercase;
 
-	&__copy {
-		font-family: $font-serif;
-		margin-bottom: 1em;
-	}
+    @include touch-hover('idle') {
+      color: palette(mono, 15);
+    }
 
-	&__link {
-		font-weight: $font-weight-bold;
-		text-transform: uppercase;
-
-		@include touch-hover('idle') {
-			color: palette(mono, 15);
-		}
-
-		@include touch-hover('hover') {
-			color: palette(mono, base);
-		}
-	}
-}
+    @include touch-hover('hover') {
+      color: palette(mono, base);
+    }
+  }
+} // .take-action
 
 .v3footer { // so named to avoid conflict with /refills/_footer.scss stuff
-	background: palette(mono, 10);
 
-	&__nav {
+  &__nav,
+  &__newsletter {
+    padding-top: 4em;
+    padding-bottom: 2em;
+  }
 
-		&__row {
-			@include display(flex);
-			padding-bottom: 2em;
-		}
+  &__nav {
+    background: palette(mono, 10);
 
-		&__column {
-			width: 48%;
+    &__row {
+      @include display(flex);
+    }
 
-			p:last-of-type {
-				margin-top: 2.5em;
-			}
+    &__column {
+      width: 48%;
 
-			&:first-child {
-				margin-right: 4%;
-			}
-		}
+      p:last-of-type {
+        margin-top: 3em;
+      }
 
-		&__categories {
-			color: palette(brand, base);
-			font-weight: $font-weight-bold;
-			text-transform: uppercase;
-		}
+      &:first-child {
+        margin-right: 4%;
+      }
+    }
 
-		&__links {
-			display: block;
-			font-family: $font-serif;
-			font-size: 2em;
-			margin-bottom: 0;
+    &__categories {
+      margin-bottom: 2.5em;
+    }
 
-			@include touch-hover('idle') {
-				color: palette(mono, base);
-			}
+    &__links {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      margin-bottom: .5em;
 
-			@include touch-hover('hover') {
-				color: palette(brand, teal);
-			}
-		}
-	}
-}
+      @include touch-hover('idle') {
+        color: palette(mono, 90);
+      }
+
+      @include touch-hover('hover') {
+        color: palette(brand, teal);
+      }
+    }
+
+    &__label { // needs more work
+      float: left;
+      padding-right: 0;
+
+      em {
+        font-size: 1.25rem;
+        font-weight: $font-weight-normal;
+        text-transform: capitalize;
+      }
+    }
+  } // &__nav
+
+  &__newsletter {
+    border-bottom: 1px solid palette(mono, 10);
+    text-align: center;
+
+    &__title {
+      line-height: 1.25;
+      margin-bottom: .5em;
+    }
+
+    form input[type="email"] {
+      border: 2px solid palette(mono, 10);
+      border-radius: 0;
+      margin-bottom: 1em;
+      padding: .75em;
+    }
+
+    .button {
+      border: 2px solid palette(brand, teal);
+    }
+  } // &__newsletter
+
+  &__identification {
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+
+    &__copy {
+      display: inline-block;
+      font-size: .8rem;
+      margin-bottom: .25em;
+
+      a {
+        @include touch-hover('idle') {
+          color: palette(brand, teal);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, base);
+        }
+      }
+
+      &:nth-child(odd) {
+        margin-left: 1.25em;
+      }
+    }
+
+    img {
+      margin: 0 auto 1em;
+      width: 150px;
+    }
+  } // &__identification
+} // .v3footer
