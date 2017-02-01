@@ -405,10 +405,6 @@
       margin-bottom: 1em;
       padding: .75em;
     }
-
-    form input[type="submit"] {
-      @include button('primary');
-    }
   } // &__newsletter
 
   &__identification {
