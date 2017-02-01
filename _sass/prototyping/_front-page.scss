@@ -1,5 +1,8 @@
 .container {
-  padding: 0 1em;
+  padding: 0 $page-gutter;
+  margin: 0 auto;
+  max-width: $max-width;
+  min-width: $min-width;
 }
 
 .section {
@@ -9,7 +12,7 @@
     @include transform( rotate(180deg) );
     color: palette(mono, 90);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     float: right;
     letter-spacing: 0.25em;
     margin-bottom: -2em;
@@ -21,7 +24,7 @@
   &__title {
     color: palette(mono, 90);
     font-size: 2rem;
-    font-weight: $font-weight-light;
+    font-weight: $font-custom-weight-normal;
     line-height: 1;
     margin-bottom: .3em;
 
@@ -47,33 +50,31 @@
 .expertise__areas,
 .thinking__post .blog-post--excerpt,
 .take-action__copy,
-.v3footer__newsletter__copy {
+.footer__newsletter__copy {
   font-family: $font-serif;
 }
 
 .section__title,
-.v3footer__nav__links,
-.v3footer__nav__label em,
-.v3footer__newsletter__title {
-  font-family: $font-serif-2;
+.footer__nav__links,
+.footer__nav__label em,
+.footer__newsletter__title {
+  font-family: $font-custom;
 }
 
 .banner__subtitle,
 .recent-work__client,
-.recent-work__link,
 .expertise__categories,
-.thinking__title em,
 .take-action__lead-in,
 .take-action__link,
-.v3footer__nav__categories {
+.footer__nav__categories {
   font-weight: $font-weight-bold;
 }
 
 .take-action__title em {
-  font-weight: $font-weight-extra-bold;
+  font-weight: $font-custom-weight-extra-bold;
 }
 
-.banner__title, .banner__subtitle, .banner__svg__inner .button,
+.banner__title, .banner__subtitle,
 .expertise__title, .expertise__categories, .expertise__areas,
 .take-action__title, .take-action__copy {
   color: palette(mono, white);
@@ -81,16 +82,15 @@
 
 .banner__subtitle:before,
 .take-action__lead-in,
-.v3footer__nav__categories,
-.v3footer__nav__label {
+.footer__nav__categories,
+.footer__nav__label {
   color: palette(brand, base);
 }
 
 .banner__subtitle,
 .expertise__categories,
-.recent-work__link,
 .take-action__lead-in,
-.v3footer__nav__categories {
+.footer__nav__categories {
   letter-spacing: .08rem;
   text-transform: uppercase;
 }
@@ -127,9 +127,15 @@
       font-size: 1.15rem;
     }
   }
+
+  img {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .recent-work {
+  overflow: hidden;
   position: relative;
   z-index: 3; // one more than .banner__svg__follow
 
@@ -150,21 +156,8 @@
     margin-bottom: 4em;
   }
 
-  &__link {
-    border-right: 2px solid palette(brand, teal);
-    padding: .5em 2em .5em 0;
-
-    @include touch-hover('idle') {
-      color: palette(brand, teal);
-    }
-
-    @include touch-hover('hover') {
-      color: palette(brand, base);
-    }
-  }
-
   img:first-of-type {
-    max-width: 175%;
+    max-width: 175%; // temporary
   }
 }
 
@@ -182,6 +175,7 @@
   }
 
   &__column {
+    @include list-reset;
     width: 48%;
 
     &:first-child {
@@ -190,6 +184,7 @@
   }
 
   &__categories {
+    margin-bottom: 2em;
 
     &:before {
       color: palette(brand, teal);
@@ -197,8 +192,8 @@
   }
 
   &__areas {
-    margin-bottom: 1.5em;
-    padding-bottom: 1em;
+    margin-bottom: .875em;
+    padding-bottom: .75em;
 
     &:not(:last-child) {
       border-bottom: 1px solid lighten(palette(brand, denim), 8%);
@@ -209,7 +204,7 @@
     background: palette(brand, teal);
 
     .expertise__categories {
-      padding: 5em 0 2em;
+      padding-top: 5em;
 
       &:before {
         color: palette(brand, blue);
@@ -241,6 +236,7 @@
     margin-bottom: 1.5em;
 
     em {
+      display: block;
       font-size: inherit;
     }
   }
@@ -249,6 +245,41 @@
     box-shadow: $default-box-shadow;
     margin-bottom: 2em;
     text-align: left;
+
+		// Following 3 changes should be made in current site's notes.scss so they don't have to be overridden here and things are consistent from posts here to posts on the notes page
+    .blog-post--meta--category a {
+      letter-spacing: .125em;
+
+      @include touch-hover('idle') {
+        color: palette(brand, base);
+      }
+
+      @include touch-hover('hover') {
+        color: palette(brand, teal);
+      }
+    }
+
+    .blog-post--excerpt h1 a {
+
+      @include touch-hover('idle') {
+        color: palette(brand, blue);
+      }
+
+      @include touch-hover('hover') {
+        color: palette(brand, teal);
+      }
+    }
+
+    .blog-post--author span a {
+
+      @include touch-hover('idle') {
+        color: palette(brand, base);
+      }
+
+      @include touch-hover('hover') {
+        color: palette(brand, teal);
+      }
+    }
   }
 }
 
@@ -286,7 +317,7 @@
   }
 } // .take-action
 
-.v3footer { // so named to avoid conflict with /refills/_footer.scss stuff
+.footer {
 
   &__nav,
   &__newsletter {
@@ -298,18 +329,15 @@
     background: palette(mono, 10);
 
     &__row {
-      @include display(flex);
+      -webkit-columns: 150px 2; // More work needed to get this
+      -moz-columns: 150px 2;    // flowing correctly. break-inside
+      columns: 150px 2;         // property would not work
     }
 
     &__column {
-      width: 48%;
-
-      p:last-of-type {
-        margin-top: 3em;
-      }
-
-      &:first-child {
-        margin-right: 4%;
+      @include list-reset;
+      &:first-child li:last-child { // the last li in the first ul
+        margin-bottom: 2.5em;
       }
     }
 
@@ -319,29 +347,47 @@
 
     &__links {
       display: block;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       line-height: 1.25;
       margin-bottom: .5em;
 
-      @include touch-hover('idle') {
-        color: palette(mono, 90);
+      a {
+
+        @include touch-hover('idle') {
+          color: palette(mono, 90);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, teal);
+        }
+      }
+    }
+
+    div.footer__nav__row {
+      height: 400px;
+      position: relative;
+
+      .footer__nav__label {
+        margin-bottom: 1em;
+        padding-right: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        em {
+          font-size: 1.25rem;
+          font-weight: $font-custom-weight-normal;
+          text-transform: capitalize;
+        }
       }
 
-      @include touch-hover('hover') {
-        color: palette(brand, teal);
+      img {
+        position: absolute;
+        bottom: -2em;
+        right: -1em;
       }
     }
 
-    &__label { // needs more work
-      float: left;
-      padding-right: 0;
-
-      em {
-        font-size: 1.25rem;
-        font-weight: $font-weight-light;
-        text-transform: capitalize;
-      }
-    }
   } // &__nav
 
   &__newsletter {
@@ -360,8 +406,8 @@
       padding: .75em;
     }
 
-    .button {
-      border: 2px solid palette(brand, teal);
+    form input[type="submit"] {
+      @include button('primary');
     }
   } // &__newsletter
 
@@ -371,22 +417,18 @@
     text-align: center;
 
     &__copy {
-      display: inline-block;
       font-size: .8rem;
       margin-bottom: .25em;
 
       a {
+
         @include touch-hover('idle') {
-          color: palette(brand, teal);
+          color: palette(mono, 66);
         }
 
         @include touch-hover('hover') {
           color: palette(brand, base);
         }
-      }
-
-      &:nth-child(odd) {
-        margin-left: 1.25em;
       }
     }
 
@@ -395,4 +437,4 @@
       width: 150px;
     }
   } // &__identification
-} // .v3footer
+} // .footer
