@@ -59,6 +59,7 @@
 .footer__nav__label em,
 .footer__newsletter__title {
   font-family: $font-custom;
+  letter-spacing: .01em;
 }
 
 .banner__subtitle,
@@ -91,7 +92,7 @@
 .expertise__categories,
 .take-action__lead-in,
 .footer__nav__categories {
-  letter-spacing: .08rem;
+  letter-spacing: .125em;
   text-transform: uppercase;
 }
 
@@ -119,6 +120,14 @@
   &__header {
     position: absolute;
     top: 15%;
+
+    em {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    letter-spacing: .06em;
   }
 
   &__svg__inner {
