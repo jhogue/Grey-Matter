@@ -34,15 +34,6 @@
   }
 }
 
-.site-nav {
-  position: absolute;
-  z-index: 1;
-
-  &__svg {
-    padding: 1em;
-  }
-}
-
 // Group declarations
 
 .banner__svg__inner__copy,
@@ -113,6 +104,27 @@
 }
 
 // Section declarations
+.navigation {
+  padding: 1.5em 1em;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  &__svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__barmenu {
+    float: right;
+    vertical-align: middle;
+
+    .menu-toggle {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+  }
+}
 
 .banner {
   position: relative;
@@ -337,21 +349,22 @@
   &__nav {
     background: palette(mono, 10);
 
-    &__row {
-      -webkit-columns: 150px 2; // More work needed to get this
-      -moz-columns: 150px 2;    // flowing correctly. break-inside
-      columns: 150px 2;         // property would not work
+    nav.footer__nav__row {
+      display: flex;
+      flex-flow: column wrap;
+      height: 600px;
     }
 
     &__column {
       @include list-reset;
-      &:first-child li:last-child { // the last li in the first ul
+      width: 48%;
+      &:nth-of-type(odd) li:last-child {
         margin-bottom: 2.5em;
       }
     }
 
     &__categories {
-      margin-bottom: 2.5em;
+      margin-bottom: 1.5em;
     }
 
     &__links {
@@ -373,15 +386,11 @@
     }
 
     div.footer__nav__row {
-      height: 400px;
-      position: relative;
+      display: flex;
 
       .footer__nav__label {
-        margin-bottom: 1em;
-        padding-right: 0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        padding: 0;
+        width: 50%;
 
         em {
           font-size: 1.25rem;
@@ -390,10 +399,8 @@
         }
       }
 
-      img {
-        position: absolute;
-        bottom: -2em;
-        right: -1em;
+      .footer__nav__image {
+        width: 50%;
       }
     }
 
