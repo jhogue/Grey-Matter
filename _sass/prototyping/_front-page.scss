@@ -38,7 +38,7 @@
 
 .banner__svg__inner__copy,
 .recent-work__copy,
-.expertise__areas,
+.expertise__item,
 .thinking__post .blog-post--excerpt,
 .take-action__copy,
 .footer__newsletter__copy {
@@ -55,7 +55,7 @@
 
 .banner__subtitle,
 .recent-work__client,
-.expertise__categories,
+.expertise__header,
 .take-action__lead-in,
 .take-action__link,
 .footer__nav__categories {
@@ -67,7 +67,7 @@
 }
 
 .banner__title, .banner__subtitle,
-.expertise__title, .expertise__categories, .expertise__areas,
+.expertise__title, .expertise__header, .expertise__item,
 .take-action__title, .take-action__copy {
   color: palette(mono, white);
 }
@@ -80,7 +80,7 @@
 }
 
 .banner__subtitle,
-.expertise__categories,
+.expertise__header,
 .take-action__lead-in,
 .footer__nav__categories {
   letter-spacing: .125em;
@@ -88,7 +88,7 @@
 }
 
 .banner__subtitle,
-.expertise__categories {
+.expertise__header {
 
   &:before {
     content: '—';
@@ -97,7 +97,8 @@
   }
 }
 
-.expertise,
+.expertise__areas,
+.expertise__examples,
 .thinking,
 .recent-work__arrow-separator {
   padding: 4em 0;
@@ -183,16 +184,19 @@
 }
 
 .expertise {
-  background: palette(brand, denim);
   padding-bottom: 0;
 
-  &__title {
-    margin-bottom: 2em;
+  &__areas {
+    background: palette(brand, denim);
   }
 
   &__row {
     @include display(flex);
     padding-bottom: 2em;
+
+    &:first-child {
+      padding-bottom: 4em;
+    }
   }
 
   &__column {
@@ -204,7 +208,7 @@
     }
   }
 
-  &__categories {
+  &__header {
     margin-bottom: 2em;
 
     &:before {
@@ -212,7 +216,7 @@
     }
   }
 
-  &__areas {
+  &__item {
     margin-bottom: .875em;
     padding-bottom: .75em;
 
@@ -221,18 +225,20 @@
     }
   }
 
-  &__bottom {
+  &__examples {
     background: palette(brand, teal);
+  }
 
-    .expertise__categories {
-      padding-top: 5em;
+  &__bottom {
+
+    .expertise__header {
 
       &:before {
         color: palette(brand, blue);
       }
     }
 
-    .expertise__areas {
+    .expertise__item {
 
       &:not(:last-child) {
         border-bottom: 1px solid lighten(palette(brand, teal), 15%);
