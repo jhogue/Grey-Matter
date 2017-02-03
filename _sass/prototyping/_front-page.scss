@@ -187,7 +187,13 @@
   padding-bottom: 0;
 
   &__areas {
+    @include clearfix;
     background: palette(brand, denim);
+    padding-bottom: 2em;
+  }
+
+  &__title {
+    margin-bottom: 2em;
   }
 
   &__row {
@@ -201,10 +207,18 @@
 
   &__column {
     @include list-reset;
-    width: 48%;
+  }
 
-    &:first-child {
-      margin-right: 4%;
+  &__top {
+    .expertise__column {
+      @include span-columns(3);
+
+      @include media($max-medium) {
+        @include span-columns(6);
+        &:nth-child(2n+3) {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -227,6 +241,7 @@
 
   &__examples {
     background: palette(brand, teal);
+    padding-bottom: 2em;
   }
 
   &__bottom {
@@ -236,12 +251,55 @@
       &:before {
         color: palette(brand, blue);
       }
+
+      @include media($xlarge-up) {
+        float: left;
+        width: 23.23176%;       // as if it was using span-columns
+        margin-right: 2.35765%; // to go along with __item below
+      }
+    }
+
+    .expertise__column {
+
+      @include media($xlarge-up) {
+        float: right;
+      }
     }
 
     .expertise__item {
+      border-bottom: 1px solid lighten(palette(brand, teal), 15%);
 
-      &:not(:last-child) {
-        border-bottom: 1px solid lighten(palette(brand, teal), 15%);
+      @include media($max-medium) {
+        @include span-columns(6);
+
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+
+        &:nth-child(n+5) {
+          border-bottom: 0;
+        }
+      }
+
+      @include media($medium-up) {
+        @include span-columns(4);
+
+        &:nth-child(3),
+        &:nth-child(6) {
+          margin-right: 0;
+        }
+
+        &:nth-child(n+4) {
+          border-bottom: 0;
+        }
+      }
+
+      @include media($xlarge-up) {
+
+        &:nth-child(n+4) {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
       }
     }
   }
@@ -358,7 +416,7 @@
     nav.footer__nav__row {
       display: flex;
       flex-flow: column wrap;
-      height: 600px;
+      max-height: 600px;
     }
 
     &__column {
@@ -393,9 +451,12 @@
 
     div.footer__nav__row {
       display: flex;
+      margin-right: -1em;
 
       .footer__nav__label {
+				margin-bottom: 1em;
         padding: 0;
+				text-align: left;
         width: 50%;
 
         em {
@@ -406,6 +467,7 @@
       }
 
       .footer__nav__image {
+        margin: -8em -3em -2em 2em;
         width: 50%;
       }
     }

@@ -17,6 +17,7 @@ $small-up: new-breakpoint( min-width bppx(small) );
 $small: new-breakpoint( min-width ( bppx(small) ) max-width ( bppx(medium)-1px ) );
 
 $medium-up: new-breakpoint( min-width bppx(medium) );
+$max-medium: new-breakpoint( max-width bppx(medium) );
 $medium: new-breakpoint( min-width ( bppx(medium) ) max-width (bppx(large)-1px) );
 
 $large-up: new-breakpoint( min-width bppx(large) );
