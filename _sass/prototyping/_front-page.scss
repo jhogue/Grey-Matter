@@ -301,9 +301,9 @@
           padding-bottom: 0;
         }
       }
-    }
-  }
-}
+    } // .expertise__item
+  } // &__bottom
+} // .expertise
 
 .thinking {
   padding-bottom: 6em;
@@ -312,7 +312,8 @@
     margin-bottom: -5em;
   }
 
-  &__blog {
+  &__posts {
+    @include clearfix;
     text-align: center;
   }
 
@@ -323,50 +324,99 @@
     em {
       display: block;
       font-size: inherit;
+
+      @include media($xlarge-up) {
+        display: inline-block;
+      }
     }
   }
 
-  &__post {
+  &-post {
     box-shadow: $default-box-shadow;
     margin-bottom: 2em;
     text-align: left;
 
-		// Following 3 changes should be made in current site's notes.scss so they don't have to be overridden here and things are consistent from posts here to posts on the notes page
-    .blog-post--meta--category a {
-      letter-spacing: .125em;
+    &__content {
+      padding: 2.25em 2em;
+    }
 
-      @include touch-hover('idle') {
+    &__meta {
+      color: palette(mono, base);
+      font-weight: $font-weight-bold;
+
+      &--category a {
+        letter-spacing: .125em;
+        text-transform: uppercase;
+
+        @include touch-hover('idle') {
+          color: palette(brand, base);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, teal);
+        }
+      }
+
+      .separator {
+        margin: 0 1rem;
+      }
+    } // &--meta
+
+    &__excerpt {
+      position: relative;
+
+      h1 {
+        font-size: 2em;
+        line-height: 1.5em;
+        margin: .7em 0;
+      }
+
+      a {
+        @include touch-hover('idle') {
+          color: palette(brand, blue);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, teal);
+        }
+      }
+    } // &--excerpt
+
+    &__author {
+
+      img {
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 1em;
+        vertical-align: middle;
+      }
+
+      span {
         color: palette(brand, base);
+        display: inline-block;
+        font-weight: $font-weight-bold;
       }
 
-      @include touch-hover('hover') {
-        color: palette(brand, teal);
+      a {
+        @include touch-hover('idle') {
+          color: palette(brand, base);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, teal);
+        }
       }
-    }
+    } // &__author
 
-    .blog-post--excerpt h1 a {
+    @include media($xlarge-up) {
+      @include span-columns(4);
 
-      @include touch-hover('idle') {
-        color: palette(brand, blue);
-      }
-
-      @include touch-hover('hover') {
-        color: palette(brand, teal);
-      }
-    }
-
-    .blog-post--author span a {
-
-      @include touch-hover('idle') {
-        color: palette(brand, base);
-      }
-
-      @include touch-hover('hover') {
-        color: palette(brand, teal);
+      &:nth-of-type(3) {
+        margin-right: 0;
       }
     }
-  }
-}
+  } // &-post
+} // .thinking
 
 .take-action {
   background: top left no-repeat url('../../assets/img/sample-video-still.jpg');
