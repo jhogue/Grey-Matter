@@ -39,7 +39,7 @@
 .banner__svg__inner__copy,
 .recent-work__copy,
 .expertise__item,
-.thinking__post .blog-post--excerpt,
+.thinking-post__excerpt,
 .take-action__copy,
 .footer__newsletter__copy {
   font-family: $font-serif;
@@ -309,7 +309,10 @@
   padding-bottom: 6em;
 
   .section__label {
-    margin-bottom: -5em;
+
+    @include media($xlarge-up) {
+      margin-bottom: -10em;
+    }
   }
 
   &__posts {
@@ -325,7 +328,7 @@
       display: block;
       font-size: inherit;
 
-      @include media($xlarge-up) {
+      @include media($small-up) {
         display: inline-block;
       }
     }
@@ -408,10 +411,27 @@
       }
     } // &__author
 
+    @include media($medium-up) {
+      @include span-columns(6);
+
+      &:nth-of-type(2) {
+        margin-right: 0;
+      }
+
+      &:nth-of-type(3) {
+        display: none;
+      }
+    }
+
     @include media($xlarge-up) {
       @include span-columns(4);
 
+      &:nth-of-type(2) {
+        margin-right: 2.35765%; // what it should be with span-columns
+      }
+
       &:nth-of-type(3) {
+        display: block;
         margin-right: 0;
       }
     }
