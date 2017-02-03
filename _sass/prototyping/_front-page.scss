@@ -474,6 +474,10 @@
 
 .footer {
 
+  &__top {
+    background: palette(mono, 10);
+  }
+
   &__nav,
   &__newsletter {
     padding-top: 4em;
@@ -481,7 +485,6 @@
   }
 
   &__nav {
-    background: palette(mono, 10);
 
     nav.footer__nav__row {
       display: flex;
@@ -544,8 +547,11 @@
 
   } // &__nav
 
-  &__newsletter {
+  &__mid {
     border-bottom: 1px solid palette(mono, 10);
+  }
+
+  &__newsletter {
     text-align: center;
 
     &__title {
@@ -556,8 +562,15 @@
     form input[type="email"] {
       border: 2px solid palette(mono, 10);
       border-radius: 0;
+      display: block;
       margin-bottom: 1em;
       padding: .75em;
+
+      @include media($medium-up) {
+        display: inline-block;
+        margin-right: .5em;
+        max-width: 500px;
+      }
     }
   } // &__newsletter
 
@@ -567,8 +580,23 @@
     text-align: center;
 
     &__copy {
-      font-size: .8rem;
-      margin-bottom: .25em;
+
+      p {
+        font-size: .8rem;
+        margin-bottom: .25em;
+
+        @include media($small-up) {
+          display: inline-block;
+
+          &:not(:nth-of-type(1)) {
+            margin-left: 1em;
+          }
+        }
+
+        @include media($medium-up) {
+          margin: 1em 0 0 1em;
+        }
+      }
 
       a {
 
@@ -580,11 +608,30 @@
           color: palette(brand, base);
         }
       }
+
+      @include media($medium-up) {
+        float: right;
+      }
     }
 
-    img {
-      margin: 0 auto 1em;
-      width: 150px;
+    &__logo {
+
+      img {
+        margin: 0 auto 1em;
+        width: 150px;
+
+        @include media($medium-up) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include media($medium-up) {
+        float: left;
+      }
+    }
+
+    @include media($medium-up) {
+      @include clearfix;
     }
   } // &__identification
 } // .footer
