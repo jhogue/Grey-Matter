@@ -115,17 +115,17 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
-  jekyll (= 2.4.0)
-  jekyll-assets (= 1.0.0)
-  jekyll-watch (= 1.1)
-  liquid (= 2.6.1)
+  jekyll (>= 2.4.0)
+  jekyll-assets (>= 1.0.0)
+  jekyll-watch (>= 1.1)
+  liquid (>= 2.6.1)
   neat
-  pygments.rb (= 0.6.0)
-  rake (= 10.1)
-  redcarpet (= 3.1)
-  sass (= 3.4.2)
+  pygments.rb (>= 0.6.0)
+  rake (>= 10.1)
+  redcarpet (>= 3.1)
+  sass (>= 3.4.2)
   sass-globbing
   uglifier
 
 BUNDLED WITH
-   1.13.6
+   1.14.3
