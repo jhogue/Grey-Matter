@@ -69,15 +69,13 @@ $texture-height: 50;
     &__follow {
       height: $texture-height * 1vw;
       margin-top: -12%;
-      overflow: hidden;
       position: relative;
       z-index: 2;
 
       &:after {
         @include transform( translateX(-50%) rotate(-6deg) );
         @include transform-origin(top right);
-        background: top center no-repeat url('../img/texture_8colors.png') #fff;
-        background-size: contain;
+        background: bottom center no-repeat url('../img/texture.png') #fff;
         content: '';
         height: $texture-height * 1vw;
         position: absolute;

@@ -99,8 +99,7 @@
 
 .expertise__areas,
 .expertise__examples,
-.thinking,
-.recent-work__arrow-separator {
+.thinking {
   padding: 4em 0;
 }
 
@@ -161,13 +160,28 @@
   position: relative;
   z-index: 3; // one more than .banner__svg__follow
 
-  &__client,
-  &__copy {
-    color: palette(mono, 90);
-  }
+  &__showcase--1 {
+    @include display(flex);
+    @include flex-direction(column);
+    width: 100%;
+
+    @include media($medium-up) {
+      margin-right: 0;
+      width: 50%;
+    }
+  } // &__showcase--1
 
   &__title {
     margin-bottom: 1em;
+
+    em {
+      display: block;
+    }
+  }
+
+  &__client,
+  &__copy {
+    color: palette(mono, 90);
   }
 
   &__client {
@@ -175,13 +189,102 @@
   }
 
   &__copy {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
   }
 
-  img:first-of-type {
-    max-width: 175%; // temporary
+  a.button__arrow-right {
+    width: 150px;
   }
-}
+
+  &__images--1 {
+    margin: 6em -1em 2em 0;
+    position: relative;
+
+    img:first-child {
+      position: absolute;
+      top: -30%;
+      right: 1em;
+      width: 35%;
+    }
+
+    @include media($medium-up) {
+      margin-right: -76px;
+    }
+  } // &__images--1
+
+  &__images--2 {
+
+    img {
+      box-shadow: $default-box-shadow;
+      min-width: 100%; // temporary
+    }
+
+    @include media($medium-up) {
+      position: absolute;
+      left: -10%;
+      width: 40%;
+    }
+  } // &__images--2
+
+  &__arrow-separator {
+    padding: 4em 1em 0;
+  }
+
+  &__showcase--2 {
+
+    .recent-work__content {
+      margin-top: 2em;
+
+      @include media($medium-up) {
+        margin-bottom: 4em;
+        margin-top: 4em;
+        width: 45%;
+      }
+    }
+
+    @include media($medium-up) {
+      @include display(flex);
+    }
+  } // &__showcase--2
+
+  &__images--3 {
+    @include display(flex);
+    @include align-items(center);
+    margin-bottom: 2em;
+    margin-right: -50%;
+    padding-top: 3em;
+
+    div {
+      margin-right: 1%;
+      width: 30%;
+
+      &:nth-child(2) {
+
+        @include media($medium-up) {
+          position: relative;
+          bottom: -7em;
+        }
+      }
+    }
+
+    @include media($medium-up) {
+      margin-bottom: 0;
+      margin-left: 5%;
+      margin-right: -25%;
+      width: 75%;
+      padding-top: 0;
+    }
+  } // &__images--3
+
+  &__border {
+    @include transform( rotate(-30deg) );
+    border-bottom: 300px solid palette(mono, 10);
+    position: absolute;
+    bottom: -100px;
+    width: 150%;
+    z-index: -1;
+  }
+} // .recent-work
 
 .expertise {
   padding-bottom: 0;
@@ -439,7 +542,7 @@
 } // .thinking
 
 .take-action {
-  background: top left no-repeat url('../../assets/img/sample-video-still.jpg');
+  background: top left no-repeat url('../../assets/img/make-it-great.png');
   background-size: cover;
 
   &__content {
@@ -540,7 +643,7 @@
       }
 
       .footer__nav__image {
-        margin: -8em -3em -2em 2em;
+        margin: -12em -3em -2em 3em;
         width: 50%;
       }
     }
@@ -612,7 +715,7 @@
       @include media($medium-up) {
         float: right;
       }
-    }
+    } // &__copy
 
     &__logo {
 
@@ -628,7 +731,7 @@
       @include media($medium-up) {
         float: left;
       }
-    }
+    } // &__logo
 
     @include media($medium-up) {
       @include clearfix;
