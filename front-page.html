@@ -4,14 +4,29 @@ nav-title: Home
 permalink: home/
 ---
 
-<!-- This is here just for prototyping. We would use same nav in place on site now, just styled differently -->
-<header class="navigation" role="navigation">
-	<div class="navigation__svg">
-		<img src="../assets/img/oomph_wordmark_white.svg">
-	</div>
-	<div class="navigation__barmenu">
-		<a class="menu-toggle"><i class="fa fa-bars"></i></a>
-	</div>
+<header id="navigation" class="navigation">
+	<div class="main-navigation container">
+		<div class="main-navigation__logo">
+			<a href="#"><img src="../assets/img/oomph_wordmark_white.svg"></a>
+		</div>
+		<div class="main-navigation__menus">
+			<ul class="main-navigation__menus--desktop">
+				<li class="main-navigation__menus--desktop--menu-item">
+					<a href="">Services</a>
+					<ul class="submenu-navigation__menu">
+						<li class="submenu-navigation__menu-item"><a href="">Strategy &amp; Support</a></li>
+						<li class="submenu-navigation__menu-item"><a href="">Design &amp; UX</a></li>
+						<li class="submenu-navigation__menu-item"><a href="">Development</a></li>
+					</ul>
+				</li>
+				<li class="main-navigation__menus--desktop--menu-item"><a href="">Work</a></li>
+				<li class="main-navigation__menus--desktop--menu-item"><a href="">Company</a></li>
+				<li class="main-navigation__menus--desktop--menu-item"><a href="">Blog</a></li>
+				<li class="main-navigation__menus--desktop--menu-item"><a href="">Contact</a></li>
+			</ul>
+			<a class="main-navigation__menus--mobile"><i class="fa fa-bars"></i></a>
+		</div>
+	</div><!-- .navigation container -->
 </header>
 
 <section class="banner" role="banner">
@@ -48,7 +63,7 @@ permalink: home/
 		<a href="#" class="button button__arrow-right">View More</a>
 
 		<div class="recent-work__images--1">
-      <img src="../assets/img/leica-mobile-screenshot.png">
+			<img src="../assets/img/leica-mobile-screenshot.png">
 			<img src="../assets/img/leica-laptop-screenshot.png">
 		</div>
 		<div class="recent-work__images--2">
@@ -58,8 +73,8 @@ permalink: home/
 	</div><!-- .recent-work__showcase--1 -->
 
 	<div class="recent-work__arrow-separator">
-    <img src="../assets/img/interactive-arrows.png">
-  </div>
+		<img src="../assets/img/interactive-arrows.png">
+	</div>
 
 	<div class="recent-work__showcase--2 container">
 
@@ -68,25 +83,25 @@ permalink: home/
 			<p class="recent-work__copy">
 				Learn how United Way of Rhode Island transformed the digital experience using user-focused design that&rsquo;s inspiring volunteers.
 			</p>
-      <a href="#" class="button button__arrow-right">View More</a>
+			<a href="#" class="button button__arrow-right">View More</a>
 		</div>
 
 
 		<div class="recent-work__images--3">
-      <div>
-        <img src="../assets/img/uwri-mobile-screenshot.png">
-      </div>
-      <div>
-        <img src="../assets/img/uwri-mobile-screenshot.png">
-      </div>
-      <div>
-        <img src="../assets/img/uwri-mobile-screenshot.png">
-      </div>
+			<div>
+				<img src="../assets/img/uwri-mobile-screenshot.png">
+			</div>
+			<div>
+				<img src="../assets/img/uwri-mobile-screenshot.png">
+			</div>
+			<div>
+				<img src="../assets/img/uwri-mobile-screenshot.png">
+			</div>
 		</div>
 
-  </div><!-- .recent-work__showcase--2 -->
+	</div><!-- .recent-work__showcase--2 -->
 
-  <div class="recent-work__border"></div>
+	<div class="recent-work__border"></div>
 
 </section><!-- .recent-work -->
 
@@ -214,6 +229,7 @@ permalink: home/
 <footer id="footer" class="footer">
 	<div class="footer__top">
 		<div class="footer__nav container">
+			<div class="section__label footer__nav__label">Made In <em>Providence</em></div>
 			<nav class="footer__nav__row">
 				<ul class="footer__nav__column">
 					<li class="footer__nav__categories">Social</li>
@@ -244,9 +260,8 @@ permalink: home/
 				</ul>
 			</nav>
 			<div class="footer__nav__row">
-				<div class="section__label footer__nav__label">Made In <em>Providence</em></div>
 				<div class="footer__nav__image">
-					<img src="../assets/img/indy-trust-bldg-bw.svg" />
+					<img src="../assets/img/indy-trust-bldg-bw.svg" class="building-graphic" />
 				</div>
 			</div>
 		</div><!-- .footer__nav -->

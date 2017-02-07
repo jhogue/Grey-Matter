@@ -53,6 +53,7 @@
   letter-spacing: .01em;
 }
 
+.main-navigation__menus--desktop--menu-item,
 .banner__subtitle,
 .recent-work__client,
 .expertise__header,
@@ -79,6 +80,7 @@
   color: palette(brand, base);
 }
 
+.main-navigation__menus--desktop--menu-item,
 .banner__subtitle,
 .expertise__header,
 .take-action__lead-in,
@@ -104,24 +106,88 @@
 }
 
 // Section declarations
-.navigation {
+.main-navigation {
   padding: 1.5em 1em;
   position: absolute;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 1;
 
-  &__svg {
-    display: inline-block;
-    vertical-align: middle;
+  &__logo {
+    float: left;
   }
 
-  &__barmenu {
+  &__menus {
     float: right;
-    vertical-align: middle;
 
-    .menu-toggle {
+    &--desktop {
+      @include list-reset;
+      display: none;
+
+      &--menu-item {
+        display: inline;
+        font-size: 1rem;
+        margin-left: 3em;
+        padding-bottom: 3em;
+
+        a {
+          padding-bottom: .25em;
+
+          @include touch-hover('idle') {
+            color: palette(mono, white);
+          }
+
+          @include touch-hover('hover') {
+            border-bottom: 2px solid palette(brand, base);
+            color: palette(mono, white);
+          }
+        }
+
+        &:hover, &:focus {
+          .submenu-navigation__menu {
+            display: block;
+          }
+        }
+      }
+
+      .submenu-navigation {
+        &__menu {
+          @include list-reset;
+          background: palette(mono, 90);
+          display: none;
+          padding: 1em;
+          position: absolute;
+          top: 80px;
+        }
+
+        &__menu-item {
+          font-family: $font-serif;
+          font-size: 1rem;
+          text-transform: capitalize;
+
+          a {
+
+            @include touch-hover('idle') {
+              color: palette(mono, 33);
+              letter-spacing: normal;
+            }
+          }
+        }
+      }
+
+      @include media($large-up) {
+        display: block;
+      }
+    }
+
+    &--mobile {
       font-size: 2rem;
       line-height: 40px;
+
+      @include media($large-up) {
+        display: none;
+      }
     }
   }
 }
@@ -131,6 +197,8 @@
 
   &__header {
     position: absolute;
+    left: 0;
+    right: 0;
     top: 15%;
 
     em {
@@ -151,6 +219,7 @@
 
   img {
     max-width: none;
+    min-width: 550px;
     width: 100%;
   }
 }
@@ -588,18 +657,61 @@
   }
 
   &__nav {
+    position: relative;
+
+    .footer__nav__label {
+      position: absolute;
+      bottom: 5em;
+      left: 0;
+      padding-right: 0;
+
+      em {
+        font-size: 1.25rem;
+        font-weight: $font-custom-weight-normal;
+        text-transform: capitalize;
+      }
+
+      @media all and (min-width: 500px) {
+        padding-left: 0;
+        position: static;
+      }
+    }
 
     nav.footer__nav__row {
       display: flex;
       flex-flow: column wrap;
       max-height: 600px;
+
+      @media all and (min-width: 500px) {
+        width: 66%;
+      }
+
+      @media all and (min-width: 700px) {
+        width: 75%;
+      }
+
+      @include media($large-up) {
+        max-height: 500px;
+      }
     }
 
     &__column {
       @include list-reset;
       width: 48%;
+
       &:nth-of-type(odd) li:last-child {
         margin-bottom: 2.5em;
+      }
+
+      &:nth-child(2) li:last-child {
+
+        @include media($large-up) {
+          margin-bottom: 2.5em;
+        }
+      }
+
+      @include media($large-up) {
+        width: 33%;
       }
     }
 
@@ -629,22 +741,28 @@
       display: flex;
       margin-right: -1em;
 
-      .footer__nav__label {
-				margin-bottom: 1em;
-        padding: 0;
-				text-align: left;
-        width: 50%;
-
-        em {
-          font-size: 1.25rem;
-          font-weight: $font-custom-weight-normal;
-          text-transform: capitalize;
-        }
-      }
 
       .footer__nav__image {
         margin: -12em -3em -2em 3em;
-        width: 50%;
+        width: 100%;
+
+        .building-graphic {
+          float: right;
+          max-width: 200px;
+        }
+
+        @media all and (min-width: 500px) {
+          margin-right: 1em;
+        }
+      }
+
+      @media all and (min-width: 500px) {
+        margin-top: -23em;
+      }
+
+      @include media($large-up) {
+        margin-right: 0;
+        margin-top: -17em;
       }
     }
 
