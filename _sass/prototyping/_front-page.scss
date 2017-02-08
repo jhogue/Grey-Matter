@@ -1,3 +1,47 @@
+@keyframes slideInFromRight {
+  0% {
+    right: -110%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeftFull {
+  0% {
+    left: -110%;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeftPartial {
+  0% {
+    left: -110%;
+    opacity: 0;
+  }
+  100% {
+    left: -10%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    bottom: -100vw;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 .container {
   padding: 0 $page-gutter;
   margin: 0 auto;
@@ -266,10 +310,12 @@
   }
 
   &__images--1 {
+    animation: slideInFromRight 2s;
     margin: 6em -1em 2em 0;
     position: relative;
 
     img:first-child {
+      animation: slideInFromRight 3s;
       position: absolute;
       top: -30%;
       right: 1em;
@@ -282,6 +328,8 @@
   } // &__images--1
 
   &__images--2 {
+    animation: slideInFromLeftFull 2s;
+    position: relative;
 
     img {
       box-shadow: $default-box-shadow;
@@ -289,6 +337,7 @@
     }
 
     @include media($medium-up) {
+      animation: slideInFromLeftPartial 2s;
       position: absolute;
       left: -10%;
       width: 40%;
@@ -319,9 +368,11 @@
   &__images--3 {
     @include display(flex);
     @include align-items(center);
+    animation: slideInFromRight 2s;
     margin-bottom: 2em;
     margin-right: -50%;
     padding-top: 3em;
+    position: relative;
 
     div {
       margin-right: 1%;
@@ -346,10 +397,10 @@
   } // &__images--3
 
   &__border {
-    @include transform( rotate(-30deg) );
-    border-bottom: 300px solid palette(mono, 10);
+    @include transform( rotate(-25deg) );
+    border-bottom: 800px solid palette(mono, 10);
     position: absolute;
-    bottom: -100px;
+    bottom: -450px;
     width: 150%;
     z-index: -1;
   }
@@ -507,11 +558,15 @@
   }
 
   &-post {
+    animation: slideInFromLeftFull 2s;
     box-shadow: $default-box-shadow;
     margin-bottom: 2em;
+    position: relative;
     text-align: left;
+    z-index: 2;
 
     &__content {
+      background-color: palette(mono, white);
       padding: 2.25em 2em;
     }
 
@@ -583,6 +638,10 @@
       }
     } // &__author
 
+    &:nth-of-type(2) {
+      animation: slideInFromRight 2s;
+    }
+
     @include media($medium-up) {
       @include span-columns(6);
 
@@ -599,10 +658,12 @@
       @include span-columns(4);
 
       &:nth-of-type(2) {
+        animation: slideInFromBottom 2s;
         margin-right: 2.35765%; // what it should be with span-columns
       }
 
       &:nth-of-type(3) {
+        animation: slideInFromRight 2s;
         display: block;
         margin-right: 0;
       }
