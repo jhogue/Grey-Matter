@@ -97,6 +97,7 @@
     .fa-times {
       background: palette(brand, teal);
       color: palette(mono, white);
+      cursor: pointer;
       display: inline-block;
       float: right;
       padding: 4px;
@@ -105,6 +106,7 @@
       right: 20px;
     }
     .fa-bars {
+      cursor: pointer;
       display: none;
     }
   }
