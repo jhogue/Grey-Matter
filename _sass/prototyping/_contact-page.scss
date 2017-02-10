@@ -1,0 +1,94 @@
+.lead-in {
+  padding-bottom: 8em;
+  position: relative;
+  z-index: 3;
+
+  @include media($large-up) {
+    @include display(flex);
+  }
+
+  &__label {
+
+    @include media($large-up) {
+      position: absolute;
+      right: 2em;
+    }
+  }
+
+  &__social__wrapper {
+    display: none;
+
+    @include media($large-up) {
+      display: block;
+      width: 25%;
+    }
+  }
+
+  &__social {
+    @include list-reset;
+    border-top: 2px solid palette(brand, base);
+    padding-top: 2em;
+    width: 25%;
+
+    &__links {
+      display: block;
+      font-family: $font-custom;
+      font-size: 1.5rem;
+      letter-spacing: .01em;
+      line-height: 1.25;
+      margin-bottom: .5em;
+
+      a {
+
+        @include touch-hover('idle') {
+          color: palette(mono, 90);
+        }
+
+        @include touch-hover('hover') {
+          color: palette(brand, teal);
+        }
+      }
+    }
+  }
+
+  &__content__wrapper {
+
+    @include media($large-up) {
+      width: 70%;
+    }
+  }
+
+  &__headline {
+    font-family: $font-custom;
+    font-size: 3rem;
+    font-weight: $font-custom-weight-normal;
+    margin-top: -0.5em;
+  }
+
+  &__copy {
+    font-family: $font-serif;
+  }
+
+  &__subhead {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    margin: 2em 0 1em;
+  }
+
+  &__buttons {
+    @include display(flex);
+    @include justify-content(flex-start);
+    @include align-items(center);
+
+    a {
+      text-align: center;
+    }
+
+    em {
+      font-family: $font-custom;
+      font-weight: $font-custom-weight-normal;
+      margin: 0 1em;
+    }
+  }
+}
