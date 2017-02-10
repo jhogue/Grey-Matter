@@ -89,6 +89,29 @@
   }
 }
 
+.toggled {
+  max-height: 100%;
+  overflow: hidden;
+
+  .main-navigation__menus--mobile {
+    .fa-times {
+      background: palette(brand, teal);
+      color: palette(mono, white);
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      padding: 4px;
+      position: relative;
+      top: 20px;
+      right: 20px;
+    }
+    .fa-bars {
+      cursor: pointer;
+      display: none;
+    }
+  }
+}
+
 // Group declarations
 
 .banner__svg__inner__copy,
@@ -167,14 +190,49 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
 
   &__logo {
     float: left;
+    position: relative;
+    z-index: 5;
   }
 
   &__menus {
     float: right;
+
+    &.overlay {
+      background: palette(brand, denim);
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow-y: scroll;
+      text-align: center;
+
+      .main-navigation__menus--desktop {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
+
+      .main-navigation__menus--desktop--menu-item {
+        display: block;
+
+        &.button.button__primary {
+          display: inline-block;
+          padding-bottom: .75em;
+
+          & a:hover {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
 
     &--desktop {
       @include list-reset;
@@ -239,6 +297,10 @@
     &--mobile {
       font-size: 2rem;
       line-height: 40px;
+
+      .fa-times {
+        display: none;
+      }
 
       @include media($large-up) {
         display: none;
