@@ -29,34 +29,39 @@
   @include clearfix;
   padding-bottom: 6em;
 
-  &__label {
+  &__content__wrapper {
 
-    @include media($large-up) {
-      position: absolute;
-      right: 2em;
+    @include media($medium-up) {
+      float: right;
+      width: 65%;
     }
+  }
+
+  &__copy {
+    margin-bottom: 2em;
   }
 
   &__contact__wrapper {
     padding-top: 2em;
+    position: relative;
 
-    &:after { // the partial border-top
+    &:before { // the partial border-top
       background: palette(brand, base);
       content: '';
       height: 2px;
       position: absolute;
-      top: -2px;
-      width: 5%;
+      top: 5px;
+      width: 50px;
     }
 
-    @include media($large-up) {
+    @include media($medium-up) {
       display: block;
       float: left;
-      width: 25%;
+      width: 20%;
     }
 
     a {
-      display: block;
+      display: table;
 
       @include touch-hover('idle') {
         color: palette(mono, 66);
@@ -65,14 +70,6 @@
       @include touch-hover('hover') {
         color: palette(brand, teal);
       }
-    }
-  }
-
-  &__content__wrapper {
-
-    @include media($large-up) {
-      float: right;
-      width: 70%;
     }
   }
 
@@ -90,21 +87,26 @@
     margin-bottom: -14em;
   }
 
+  &__headline {
+    line-height: 3rem;
+    margin-bottom: 0.5em;
+  }
+
   &__project-planner {
-    margin-top: 6em;
     position: relative;
     text-align: left;
 
-    @include media($large-up) {
+    @include media($medium-up) {
       @include display(flex);
       @include flex-wrap(wrap);
+      margin-top: 6em;
     }
 
     &__column-1,
     &__column-2,
     &__column-3 select {
 
-      @include media($large-up) {
+      @include media($medium-up) {
         width: 48%;
       }
     }
@@ -113,7 +115,7 @@
     &__column-4,
     &__column-5 {
 
-      @include media($large-up) {
+      @include media($medium-up) {
         width: 100%;
       }
     }
