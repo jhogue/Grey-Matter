@@ -1,8 +1,33 @@
+.lead-in__contact__wrapper a,
+.lead-in__copy,
+.contact-form__copy {
+  font-family: $font-serif;
+}
+
+.lead-in,
+.contact-form {
+  &__headline {
+    font-family: $font-custom;
+    font-size: 3rem;
+    font-weight: $font-custom-weight-normal;
+  }
+}
+
+.contact-form,
+.contact-form .section__label.contact-form__label,
+.contact-form__headline {
+  color: palette(mono, white);
+}
+
+.lead-in,
+.contact-form {
+  position: relative;
+  z-index: 3;
+}
+
 .lead-in {
   @include clearfix;
   padding-bottom: 6em;
-  position: relative;
-  z-index: 3;
 
   &__label {
 
@@ -15,7 +40,7 @@
   &__contact__wrapper {
     padding-top: 2em;
 
-    &:after {
+    &:after { // the partial border-top
       background: palette(brand, base);
       content: '';
       height: 2px;
@@ -32,7 +57,6 @@
 
     a {
       display: block;
-      font-family: $font-serif;
 
       @include touch-hover('idle') {
         color: palette(mono, 66);
@@ -53,19 +77,105 @@
   }
 
   &__headline {
-    font-family: $font-custom;
-    font-size: 3rem;
-    font-weight: $font-custom-weight-normal;
     margin-top: -0.5em;
-  }
-
-  &__copy {
-    font-family: $font-serif;
   }
 }
 
 .contact-form {
-  background: palette(mono, 10);
-  position: relative;
-  z-index: 3;
+  background: palette(brand, denim);
+  padding: 6em 0;
+  text-align: center;
+
+  .section__label.contact-form__label {
+    margin-bottom: -14em;
+  }
+
+  &__project-planner {
+    margin-top: 6em;
+    position: relative;
+    text-align: left;
+
+    @include media($large-up) {
+      @include display(flex);
+      @include flex-wrap(wrap);
+    }
+
+    &__column-1,
+    &__column-2,
+    &__column-3 select {
+
+      @include media($large-up) {
+        width: 48%;
+      }
+    }
+
+    &__column-3,
+    &__column-4,
+    &__column-5 {
+
+      @include media($large-up) {
+        width: 100%;
+      }
+    }
+
+    &__column-1 {
+      margin-right: 4%;
+    }
+
+    &__column-5 {
+      text-align: right;
+    }
+
+    label {
+      color: palette(brand, teal);
+      display: block;
+      font-weight: $font-weight-extra-bold;
+      letter-spacing: 0.25em;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+    }
+
+    input,
+    input:focus,
+    textarea,
+    textarea:focus,
+    select,
+    button {
+      color: palette(mono, white);
+    }
+
+    input[type="text"],
+    select {
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 4em;
+    }
+
+    input[type="text"] {
+      background: transparent;
+      border-bottom: 1px solid palette(mono, base);
+      outline: 0;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.5);
+      font-weight: $font-weight-bold;
+      padding: 0.5em 1em;
+    }
+
+    textarea {
+      background: transparent;
+      border: 1px solid palette(mono, base);
+      border-radius: 0;
+      height: 200px;
+      margin-bottom: 2em;
+    }
+
+    .required {
+      color: palette(brand, base);
+    }
+  }
 }
