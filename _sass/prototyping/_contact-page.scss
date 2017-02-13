@@ -1,5 +1,5 @@
 .lead-in {
-  padding-bottom: 8em;
+  padding-bottom: 6em;
   position: relative;
   z-index: 3;
 
@@ -67,6 +67,17 @@
 
   &__copy {
     font-family: $font-serif;
+
+    a {
+
+      @include touch-hover('idle') {
+        color: inherit;
+      }
+
+      @include touch-hover('hover') {
+        color: inherit;
+      }
+    }
   }
 
   &__subhead {
@@ -90,5 +101,58 @@
       font-weight: $font-custom-weight-normal;
       margin: 0 1em;
     }
+  }
+}
+
+.contact-form {
+  background: palette(mono, 10);
+  position: relative;
+  z-index: 3;
+}
+
+.lead-out {
+  background: palette(brand, denim);
+  padding: 6em 0;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+
+  &__headline {
+    color: palette(mono, white);
+    clear: none;
+    font-family: $font-custom;
+    font-size: 4rem;
+    font-weight: $font-custom-weight-normal;
+    line-height: 1;
+    margin-bottom: .5em;
+  }
+
+  &__copy {
+    color: palette(mono, white);
+    font-family: $font-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+  &__phone {
+    display: block;
+    font-family: $font-serif;
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+
+    @include touch-hover('idle') {
+      color: palette(mono, white);
+    }
+
+    @include touch-hover('hover') {
+      color: palette(mono, white);
+    }
+  }
+
+  a.button.button__primary {
+    color: palette(mono, white);
+    display: inline-block;
+    margin-top: 1em;
   }
 }
