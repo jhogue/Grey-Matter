@@ -310,6 +310,7 @@
 }
 
 .banner {
+  overflow: hidden;
   position: relative;
 
   &__header {
@@ -779,6 +780,7 @@
 } // .take-action
 
 .footer {
+  overflow: hidden;
 
   &__top {
     background: palette(mono, 10);

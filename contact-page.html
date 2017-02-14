@@ -26,7 +26,9 @@ permalink: contact/
 </header>
 
 <section class="banner" role="banner">
-  <img src="../assets/img/make-it-great.png" alt="Unsplash">
+  <div class="banner__image__wrapper">
+    <img src="../assets/img/make-it-great.jpg" alt="Unsplash">
+  </div>
   <div class="banner__header container">
     <h1 class="section__title banner__title">Let&rsquo;s make something <em>Great</em></h1>
   </div>
@@ -79,13 +81,15 @@ permalink: contact/
       </div>
       <div class="contact-form__project-planner__column-3">
         <label for="goals">Project Goals</label>
-        <select id="goals" name="goals">
-          <option>SELECT</option>
-          <option value="">Option 1</option>
-          <option value="">Option 2</option>
-          <option value="">Option 3</option>
-          <option value="">Option 4</option>
-        </select>
+        <div class="contact-form__project-planner__select-wrapper">
+          <select id="goals" name="goals">
+            <option>SELECT</option>
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+            <option value="">Option 4</option>
+          </select>
+        </div>
       </div>
       <div class="contact-form__project-planner__column-4">
         <label for="extra-info">Anything Else We Should Know?</label>
@@ -95,7 +99,7 @@ permalink: contact/
         <button class="button button__primary">Start a Conversation</button>
       </div>
     </form><!-- .contact-form__project-planner -->
-    
+
   </div><!-- .contact-form container -->
 </section><!-- .contact-form -->
 
