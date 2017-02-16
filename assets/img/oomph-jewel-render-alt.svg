@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1000px" height="150px" viewBox="0 0 1000 150" enable-background="new 0 0 1000 150" xml:space="preserve">
+<polygon fill="#D52F26" points="-1.707,148.667 858,90.667 -1.707,0 "/>
+<rect x="-13" y="-174" fill="none" width="987" height="373"/>
+<g>
+	<polygon fill="#FFFFFF" points="1001,105.167 858,90.667 -1.707,148.667 -1.707,151 1001,151 	"/>
+</g>
+<g>
+	<defs>
+		<polygon id="SVGID_1_" points="-1.707,148.667 858,90.667 -1.707,0 		"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<g>
+			<polygon fill="#E03028" points="168.589,151.667 105.667,95.394 92.014,151 -0.007,151 -0.862,151.373 			"/>
+			<polygon fill="#E03028" points="-2.707,0 -1.707,55.929 -1.707,0.895 			"/>
+			<polygon fill="#BE2C29" points="129.089,0 -1.707,0 -1.707,0.895 105.667,95.394 			"/>
+			<polygon fill="#E6E6E6" points="-1.707,151 -0.007,151 -1.707,55.929 			"/>
+			<polygon fill="#E03028" points="105.667,95.394 -1.707,0.895 -1.707,55.929 -1.707,151 92.014,151 			"/>
+			<polygon fill="#C82D2B" points="105.667,95.394 -1.707,-1.5 -1.707,55.929 -1.707,151 92.014,151 			"/>
+		</g>
+		<polygon fill="#E03028" points="585.581,57.763 601.379,112.964 871,113 871,58.5 		"/>
+	</g>
+</g>
+</svg>

@@ -19,21 +19,40 @@
   color: palette(mono, white);
 }
 
-.banner {
+.banner__contact {
+  margin-bottom: 2em;
+  overflow: hidden;
+  position: relative;
+
+  @include media($medium-up) {
+    margin-bottom: 6em;
+  }
 
   &__image__wrapper {
     max-height: 900px;
   }
 
-  &__header.container {
-    top: 20%;
+  img {
+    max-width: none;
+    min-width: 550px;
+    width: 100%;
   }
-}
 
-.lead-in,
-.contact-form {
-  position: relative;
-  z-index: 3;
+  &__header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+
+    em {
+      display: block;
+    }
+  }
+
+  &__svg {
+    background: none;
+    margin-top: -13%;
+  }
 }
 
 .lead-in {
@@ -89,12 +108,21 @@
   }
 }
 
+section.contact-form {
+  @include display(flex);
+
+  @include media($medium-up) {
+    display: block;
+  }
+}
+
 .contact-form {
   background: palette(brand, denim);
   padding: 6em 0;
   text-align: center;
 
   .section__label.contact-form__label {
+    @include order(2);
     margin-bottom: -14em;
   }
 
