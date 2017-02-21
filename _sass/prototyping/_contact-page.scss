@@ -20,13 +20,9 @@
 }
 
 .banner__contact {
-  margin-bottom: 2em;
+  margin-bottom: 6em;
   overflow: hidden;
   position: relative;
-
-  @include media($medium-up) {
-    margin-bottom: 6em;
-  }
 
   &__image__wrapper {
     max-height: 700px;
@@ -69,6 +65,7 @@
 
   &__copy {
     margin-bottom: 2em;
+    margin-top: 1.8em;
   }
 
   &__contact__wrapper {
@@ -102,10 +99,6 @@
       }
     }
   } // &__contact__wrapper
-
-  &__headline {
-    margin-top: -0.5em;
-  }
 } // .lead-in
 
 section.contact-form {
