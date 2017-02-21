@@ -1,6 +1,10 @@
 .lead-in__contact__wrapper a,
 .lead-in__copy,
-.contact-form__copy {
+.contact-form__copy,
+.contact-form__project-planner input,
+.contact-form__project-planner textarea,
+.map__address-card--line2,
+.map__address-card--line3 {
   font-family: $font-serif;
 }
 
@@ -288,11 +292,6 @@ section.contact-form {
       text-transform: uppercase;
     }
 
-    &--line2,
-    &--line3 {
-      font-family: $font-serif;
-    }
-
     &--line1,
     &--line2,
     &--line3 {
@@ -303,5 +302,5 @@ section.contact-form {
         display: block;
       }
     }
-  }
-}
+  } // &__address-card
+} // .map
