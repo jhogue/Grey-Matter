@@ -101,12 +101,12 @@
         color: palette(brand, teal);
       }
     }
-  }
+  } // &__contact__wrapper
 
   &__headline {
     margin-top: -0.5em;
   }
-}
+} // .lead-in
 
 section.contact-form {
   @include display(flex);
@@ -239,6 +239,76 @@ section.contact-form {
 
     .required {
       color: palette(brand, base);
+    }
+  } // &__project-planner
+} // .contact-form
+
+.map {
+
+  @include media($small-up) {
+    position: relative;
+  }
+
+  &__image-wrapper {
+    height: 400px;
+  }
+
+  &__image {
+    background: center/250% no-repeat url('../img/oomph-map.png') transparent;
+    height: 100%;
+
+    @include media($small-up) {
+      background-size: 200%;
+    }
+
+    @include media($medium-up) {
+      background-size: 150%;
+    }
+
+    @include media($large-up) {
+      background-size: 100%;
+    }
+  }
+
+  &__address-card {
+    @include display(flex);
+    @include justify-content(space-between);
+    background: palette(mono, white);
+    padding: 2em;
+
+    @include media($small-up) {
+      display: block;
+      opacity: 0.95;
+      position: absolute;
+      top: calc(50% - (148px / 2)); // vert center using element height
+      right: 2em;
+    }
+
+    @include media($medium-up) {
+      right: 4em;
+    }
+
+    &--line1 {
+      color: palette(brand, base);
+      font-weight: $font-weight-bold;
+      letter-spacing: .125em;
+      text-transform: uppercase;
+    }
+
+    &--line2,
+    &--line3 {
+      font-family: $font-serif;
+    }
+
+    &--line1,
+    &--line2,
+    &--line3 {
+      display: inline;
+      margin-bottom: 0;
+
+      @include media($small-up) {
+        display: block;
+      }
     }
   }
 }
