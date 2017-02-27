@@ -85,6 +85,10 @@
 
     em {
       font-size: 4rem;
+
+      @include media($small-up) {
+        font-size: 6.5rem;
+      }
     }
   }
 }

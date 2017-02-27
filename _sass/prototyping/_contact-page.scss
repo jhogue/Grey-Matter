@@ -241,8 +241,11 @@ section.contact-form {
 } // .contact-form
 
 .map {
+  background: palette(brand, teal);
+  padding-bottom: 2em;
 
   @include media($small-up) {
+    padding-bottom: 0;
     position: relative;
   }
 
@@ -268,17 +271,17 @@ section.contact-form {
   }
 
   &__address-card {
-    @include display(flex);
-    @include justify-content(space-between);
     background: palette(mono, white);
+    margin: 0 auto;
+    opacity: 0.95;
     padding: 2em;
+    width: 80%;
 
     @include media($small-up) {
-      display: block;
-      opacity: 0.95;
       position: absolute;
       top: calc(50% - (148px / 2)); // vert center using element height
       right: 2em;
+      width: inherit;
     }
 
     @include media($medium-up) {
@@ -295,7 +298,6 @@ section.contact-form {
     &--line1,
     &--line2,
     &--line3 {
-      display: inline;
       margin-bottom: 0;
 
       @include media($small-up) {
