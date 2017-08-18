@@ -31,11 +31,11 @@ $ gem install bundler
 $ bundle install
 ```
 
-+Note: you may need to run the installers using the $ sudo command depending on the permissions of your computer.
++Note: you may need to run the installers using the `$ sudo` command depending on the permissions of your computer.
 
 
 ### Install Bourbon and Neat
-Navigate to the _sass/libraries folder, then run:
+Navigate to the `_sass/oomph-scaffold/vendor` folder, then run:
 
 ```
 $ bourbon install
@@ -46,10 +46,18 @@ Review the Gemfile to see which versions of Jekyll, Rake and SASS are required a
 
 
 ### Run the Local server and SASS compiler
+From the project root, run: 
 
 `$ rake serve`
 
-The server is available at `http://localhost:4000` or  `http://0.0.0.0:4000`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4000/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
+If needed, the two commands that Rake is running are (which you can run in two Terminal windows): 
+
+```
+$ bundle exec sass -r sass-globbing --watch _sass:assets/css &
+$ jekyll serve -w --baseurl="/grey-matter/"
+```
+
+The server is available at `http://localhost:4040/grey-matter/` or  `http://0.0.0.0:4040/grey-matter/`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4040/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
 
 
 ## Usage
