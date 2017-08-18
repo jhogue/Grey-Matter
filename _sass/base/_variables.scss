@@ -3,12 +3,18 @@
 
 // Global font declarations
 $font-sans: 'Source Sans Pro', $helvetica;
-$font-serif: $georgia;
+$font-serif: 'Source Serif Pro', $georgia;
 $font-mono: 'Source Code Pro', $monospace;
+$font-custom: 'Playfair Display', serif;
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-bold: 900;
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+$font-weight-extra-bold: 900;
+$font-serif-weight-normal: 400;
+$font-serif-weight-bold: 700;
+$font-custom-weight-normal: 400;
+$font-custom-weight-bold: 700;
+$font-custom-weight-extra-bold: 900;
 
 // Copy
 $paragraph: 1em;
@@ -20,6 +26,7 @@ $vert-line-height: $line-height * 1em;
 
 // Other globals
 $default-border-radius: 4px;
+$default-box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
 
 // Tables
 $table-border-collapse: true;

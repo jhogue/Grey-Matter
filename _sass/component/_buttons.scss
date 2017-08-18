@@ -1,15 +1,11 @@
 // @file buttons.scss
-
 // Remove and edit styles as needed. This basic idea provides three button styles
 // Can easily be expanded to accomodate more
-
-$form-button-background-default: palette(mono, 10);
-$form-button-color-default: palette(mono, 66);
-$form-button-border-color-default: palette(mono, 33);
-$form-button-border-width: 1px;
-$form-button-border-radius: $default-border-radius;
-$form-button-padding: .625em 1em .5em;
-
+$button-background-default: transparent;
+$button-color-default: palette(mono, 90);
+$button-border-color-default: palette(brand, teal);
+$button-border-width: 2px;
+$button-padding: .75em 2em;
 //
 // Usage: @include button()
 // Accepts: null (default), primary, secondary
@@ -17,66 +13,136 @@ $form-button-padding: .625em 1em .5em;
 // Authors: The Oomph Team
 //
 @mixin button($type:default) {
-  border: $form-button-border-width solid $form-button-border-color-default;
-  border-radius: $form-button-border-radius;
+  border: $button-border-width solid $button-border-color-default;
   display: inline-block;
-  padding: $form-button-padding;
+  font-weight: $font-weight-bold;
+  letter-spacing: .125rem;
+  padding: $button-padding;
   text-transform: uppercase;
-
   // Default styles are light grey, hover to darker grey
   @if $type == 'default' {
-
     @include touch-hover('idle') {
-      background-color: $form-button-background-default;
-      color: $form-button-color-default;
+      background-color: $button-background-default;
+      color: $button-color-default;
     }
-
     @include touch-hover('hover') {
-      background-color: darken($form-button-background-default, 8%);
-      color: lighten($form-button-color-default, 8%);
+      background-color: darken($button-background-default, 8%);
+      color: lighten($button-color-default, 8%);
       cursor: pointer;
     }
   }
-
   @if $type == 'primary' {
-
-    @include touch-hover() {
-      background-color: palette(brand);
-      border-color: darken(palette(brand), 8%);
-      color: palette(mono, 10);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:before {
+      @include transition(transform 400ms ease);
+      @include transition-delay(150ms);
+      content: '';
+      background-color: palette(brand, teal);
+      position: absolute;
+        top: -1em;
+        right: -1em;
+        bottom: -1em;
+        left: -1em;
+      z-index: -1;
     }
-  
+    @include touch-hover() {
+      background-color: transparent;
+      color: palette(mono, black);
+      &:before {
+        @include transform(translate3d(0,100%,0) rotate(-6deg));
+      }
+    }
     @include touch-hover('hover') {
-      background-color: palette(brand, dark);
+      background-color: transparent;
       color: palette(mono, white);
+      &:before {
+        @include transform(translate3d(0,0,0) rotate(-6deg));
+      }
     }
   }
-
-  @if $type == 'secondary' {
-
+  @if $type == 'primary-white' {
+    &:before {
+      background-color: palette(mono, white);
+    }
     @include touch-hover() {
-      background-color: palette(mono, 90);
-      border-color: palette(mono, black);
-      color: palette(mono, 25);
+      color: palette(mono, white);
+    }
+    @include touch-hover('hover') {
+      color: palette(brand, teal);
+    }
+  }
+  @if $type == 'arrow-right' {
+    border: 0;
+    border-right: 2px solid palette(brand, teal);
+    padding-left: .5em;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    &:before {
+      @include transition(all 500ms ease);
+      content: '';
+      opacity: 0;
+      position: absolute;
+        top: 50%;
+        right: .25em;
+      z-index: -2;
+      width: 1em;
+      height: 1em;
+      border-top: 2px solid palette(brand, teal);
+      border-right: 2px solid palette(brand, teal);
+    }
+
+    &:after {
+      @include transition(all 500ms ease);
+      content: '';
+      opacity: 0;
+      position: absolute;
+        top: calc(50% - 1px);
+        right: .25em;
+      z-index: -1;
+      width: 2.75em;
+      height: 0;
+      border-top: 1px solid palette(brand, teal);
+      border-bottom: 1px solid palette(brand, teal);
+    }
+    @include touch-hover() {
+      color: palette(brand, teal);
+      &:before {
+        @include transform(translate(0, -50%) rotate(45deg));
+      }
+      &:after {
+        @include transform(translateX(0));
+      }
     }
 
     @include touch-hover('hover') {
-      background-color: palette(mono, black);
-      color: palette(mono, white);
+      color: palette(brand);
+      &:before {
+        @include transform(translate(3em, -50%) rotate(45deg));
+        opacity: 1;
+      }
+      &:after {
+        @include transform(translateX(3em));
+        opacity: 1;
+      }
     }
   }
 }
-
-// Classes can be used independently: 
+// Classes can be used independently:
 // class="button", or class="button--primary"
 .button {
   @include button();
-
-  &--primary {
+  &__primary {
     @include button(primary);
   }
 
-  &--secondary {
-    @include button(secondary);
+  &__primary--white {
+    @include button(primary);
+    @include button(primary-white);
+  }
+  &__arrow-right {
+    @include button(arrow-right);
   }
 }

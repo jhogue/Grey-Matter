@@ -1,0 +1,87 @@
+// =========================================================================
+//
+//  PRECISE CONTROL OVER RESPONSIVE TYPOGRAPHY FOR SASS
+//  ---------------------------------------------------
+//  Indrek Paas @indrekpaas
+//
+//  Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+//
+//  `strip-unit()` function by Hugo Giraudel
+//
+//  11.08.2016 Remove redundant `&` self-reference
+//  31.03.2016 Remove redundant parenthesis from output
+//  02.10.2015 Add support for multiple properties
+//  24.04.2015 Initial release
+//
+// =========================================================================
+@mixin fluid-type($properties, $min-value, $max-value, $min-vw, $max-vw) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-units($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-units($max-vw - $min-vw)});
+    }
+  }
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+/* Single property
+html {
+  @include fluid-type(font-size, 14px, 18px, 320px, 1366px);
+}
+/* Multiple properties with same values
+h1 {
+  @include fluid-type(padding-bottom padding-top, 2em, 4em, 20em, 70em);
+}
+ */
+$texture-height: 50;
+.banner {
+  margin-bottom: -35vw;
+
+  &__svg {
+    background: top left no-repeat url('../img/oomph-jewel-render.svg') transparent;
+    background-size: cover;
+    //height: 0;
+    margin-top: -13%;
+    overflow: hidden;
+    //padding-bottom: 38%;
+    position: relative;
+    z-index: 1;
+
+    &__inner {
+      @include fluid-type(padding-top, 5em, 12em, em(480), em(1200));
+      @include fluid-type(padding-bottom, 5em, 12em, em(480), em(1200));
+      @include fluid-type(padding-left padding-right, 2em, 5em, em(480), em(1200));
+      color: palette(mono, white);
+      font-weight: 500;
+      margin: 0 auto;
+      max-width: em(1020);
+      //padding-left: 1em;
+      //padding-right: 1em;
+      text-align: center;
+    }
+
+    &__follow {
+      height: $texture-height * 1vw;
+      margin-top: -12%;
+      position: relative;
+      z-index: 2;
+
+      &:after {
+        @include transform( translateX(-50%) rotate(-6deg) );
+        @include transform-origin(top right);
+        background: bottom center no-repeat url('../img/texture.png') #fff;
+        content: '';
+        height: $texture-height * 1vw;
+        position: absolute;
+          top: 0; left: 50%;
+        width: 120%;
+      }
+    }
+  }
+}
