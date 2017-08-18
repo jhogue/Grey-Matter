@@ -31,6 +31,10 @@ $ gem install bundler
 $ bundle install
 ```
 
++Note: you may need to run the installers using the $ sudo command depending on the permissions of your computer.
+
+
+### Install Bourbon and Neat
 Navigate to the _sass/libraries folder, then run:
 
 ```
@@ -41,11 +45,11 @@ $ neat install
 Review the Gemfile to see which versions of Jekyll, Rake and SASS are required as minimum dependencies.
 
 
-### To run the local server
+### Run the Local server and SASS compiler
 
 `$ rake serve`
 
-The server is available at `http://localhost:4000`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4000/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
+The server is available at `http://localhost:4000` or  `http://0.0.0.0:4000`. If the compiled file URLs need to be prefixed, add a prefix to the `rakefile` line 21, and serve from that project root as well, i.e. `http://localhost:4000/project`. When you upload the sites content to a server, all URLs will be prefixed with `/project`.
 
 
 ## Usage
