@@ -77,9 +77,10 @@
     }
 
     @include media($vertical-tab-mode) {
-      @include size(80% $vertical-tabs-height);
       background-color: $tab-content-background;
       display: inline-block;
+      height: $vertical-tabs-height;
+      width: 80%;
     }
   }
 
