@@ -1,0 +1,40 @@
+---
+---
+
+// See: https://jekyllrb.com/docs/assets/
+// The load path '_sass' is assumed and inserted here for every include
+// To change the load path, go to _config.yml and change the value of 'sass_dir'
+
+
+// #Requirements
+@import
+  //"oomph-scaffold/vendor/bourbon/bourbon",
+  "oomph-scaffold/abstracts/neat-media/main";
+
+
+// #SCAFFOLD (Current tag 1.0.3)
+@import
+  // All Abstracts
+  "oomph-scaffold/abstracts/main",
+
+  // All Base
+  "oomph-scaffold/base/main",
+
+  // Layout
+  "oomph-scaffold/layout/layout",
+
+  // Components: Typically only need one file, the rest ship empty
+  "oomph-scaffold/components/content",
+  "oomph-scaffold/components/header",
+  "oomph-scaffold/components/search",
+  "oomph-scaffold/components/navigation",
+  "oomph-scaffold/components/footer",
+
+  // Pages
+  "oomph-scaffold/pages/home";
+
+
+// #GREYMATTER
+@import 
+  "prototyping/main",
+  "refills/main";
