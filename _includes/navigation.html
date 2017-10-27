@@ -1,9 +1,10 @@
+	{% assign pages = site.pages | sort:'nav-title' %}
 	<div class="mainnav">
-		<nav class="mainnav--wrapper">
-			<ul class="mainnav--list">
-				{% for node in site.pages | sort:'nav-title' %}
-					{% unless node.permalink == '/' %}
-				<li class="mainnav--list--item"><a href="{{ site.baseurl}}{{ node.permalink }}" class="mainnav--link{% if page.url == node.url %} mainnav--link__disabled{% endif %}">{% if node.nav-title %}{{ node.nav-title }}{% else %}{{ node.title }}{% endif %}</a></li>
+		<nav class="mainnav__wrapper">
+			<ul class="mainnav__list">
+				{% for p in pages %}
+					{% unless p.permalink == '/' && unless p.permalink != '' && p.nav-title != '' && p.title != '' %}
+				<li class="mainnav__list__item"><a href="{{ site.baseurl}}{{ p.permalink }}" class="mainnav__link{% if page.url == p.url %} mainnav__link__disabled{% endif %}">{% if p.nav-title %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}</a></li>
 				  {% endunless %}
 				{% endfor %}
 			</ul>
