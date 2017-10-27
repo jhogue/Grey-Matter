@@ -1,31 +1,30 @@
 ---
-layout: page
-nav-title: Home
+layout: text
 title: Grey Matter
+nav-title: Home
 permalink: /
 ---
 
-A prototyping kit built on Jekyll with the Oomph Scaffold, Bourbon, Neat and Refills
+## A prototyping kit built on Jekyll with the Oomph Scaffold and Refills
 
-## Oomph Scaffold
+
+### Oomph Scaffold
 Pull the [latest Oomph SASS Scaffold](https://github.com/oomphinc/scss-scaffold) and insert it into this project at `_sass`. This will help ensure that the code coming out of the wireframe can be inserted right into the project as development on WordPress or Drupal begins. 
 
-## Bourbon and Neat
-These libraries/tools help get us going quicker, and are required by the Oomph SASS Scaffold. Review the ReadMe file in the Scaffold to get those libraries installed. 
 
-## Font Awesome
+### Font Awesome
 We also include a CDN link to the full Font Awesome set of icons. [Reference guide is here](http://fortawesome.github.io/Font-Awesome/icons/). This helps us use icons quickly, and apply a custom set later as we define which icons we need. [A list of the icons that this project uses should be made here]({{ "icons/" | prepend: site.baseurl }}). 
 
 
-# Prototyping
+## Prototyping
 Oomph built this project to speed up prototyping and development. [Refills](http://refills.bourbon.io) helps us do that, but as a front end developer, you can also create your own patterns to make a living style guide. [Follow the code pattern found here]({{ "refills/" | prepend: site.baseurl }}) to get started. 
 
 
-# Jekyll
-Reasons to use a Jekyll Wireframe System
-========================================
+## Jekyll (< v2.4.0)
 
-* Built-in local development, fast and easy `rake serve` command compiled HTML and CSS.
+### Reasons to use a Jekyll Wireframe System
+
+* Built-in local development, fast and easy `jekyll serve` command compiled HTML and SASS.
 * Supports `.md` as well as `.html` or `.xml` files. Mix and match as needed. 
 * Supports partials for repetitive elements, like header, footer and navigation. 
 * Written with a clean and unobtrusive {% raw %}`{{ double brace }}`{% endraw %} syntax.
@@ -36,10 +35,10 @@ Reasons to use a Jekyll Wireframe System
 * Built-in support for [syntax highlighting of code snippets](https://jekyllrb.com/docs/posts/#highlighting-code-snippets) using either Pygments or Rouge.
 * [Support for data files](https://jekyllrb.com/docs/datafiles/) (CSV, JSON or YAML) to drive dynamic lists of content. 
 
-## More Jekyll
+### More Jekyll
 You like? Then [check out Jekyll Bootstrap](http://jekyllbootstrap.com) for some neat ways to make an entire site with Jekyll and serve it on Github pages or your own server. 
 
-## Cool things Jekyll templating tags do
+### Cool things Jekyll templating tags do
 
 The `unless` tag in a `forloop`: 
 
@@ -51,4 +50,4 @@ The `unless` tag in a `forloop`:
 
 Forloops also support first and last built in (no counter needed!) as seen above. 
 
-Dump a whole variable: `{{ variable | json }}`. Supports 
+Dump a whole variable: {% raw %}`{{ variable | json }}`{% endraw %}. 
