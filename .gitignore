@@ -1,14 +1,8 @@
-# The rendered site
-_site/
-
-# Rendered CSS
-assets/css/*
-
-# The Scaffold
-_sass/oomph-scaffold/*
-
 .DS_Store
 */.DS_Store
 .sass-cache/
 .jekyll-metadata
-Gemfile.lock
+
+
+# The rendered site
+_site/
