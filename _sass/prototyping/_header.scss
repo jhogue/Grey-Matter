@@ -1,21 +1,25 @@
 //<header class="mainhead">
-//	<div class="layout--container">
-//		<a class="mainhead--title alpha" href="/grey-matter/">Grey Matter</a>
+//	<div class="layout__container">
+//		<a class="mainhead__title alpha" href="/grey-matter/">Grey Matter</a>
 //			<div class="mainnav">
-//    		<nav class="mainnav--wrapper">
-//    			<ul class="mainnav--list">
-//      			<li class="mainnav--list--item"><a href="/grey-matter/readme/" class="mainnav--link">Read Me</a></li>
+//    		<nav class="mainnav__wrapper">
+//    			<ul class="mainnav__list">
+//      			<li class="mainnav__list__item"><a href="/grey-matter/readme/" class="mainnav__link">Read Me</a></li>
 //					 </ul>
+body {
+  background-color: $color-body
+}
+
 .mainhead {
   @include clearfix;
   @include container-dark();
   text-align: center;
 
-  &--title {
+  &__title {
     color: palette(mono, 10);
   }
 
-  // All anchors in the headerm including the nav
+  // All anchors in the header including the nav
   a {
 
     @include touch-hover('idle') {
@@ -34,14 +38,14 @@
 
 .mainnav {
 
-  &--wrapper {}
+  &__wrapper {}
 
-  &--list {
+  &__list {
 
-    &--item {}
+    &__item {}
   }
 
-  &--link {
+  &__link {
     display: block;
     line-height: 1.25;
     padding: .25em .5em; 
@@ -49,10 +53,10 @@
 
   @include media($small-up) {
 
-    &--list {
+    &__list {
       margin-left: -.5em;
 
-      &--item {
+      &__item {
         display: inline-block;
       }
     }

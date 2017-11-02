@@ -8,7 +8,7 @@ $(document).ready(function() {
    * http://css-tricks.com/snippets/jquery/smooth-scrolling/
    */
   $(function() {
-    $('.smooth-scroll').click(function(e) {
+    $('.js-smooth-scroll').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -16,7 +16,6 @@ $(document).ready(function() {
           $('html,body').animate({
             scrollTop: target.offset().top
           }, 500);
-          e.preventDefault();
         }
       }
     });

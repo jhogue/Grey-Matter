@@ -5,74 +5,162 @@ title: Prototype Grid Structure
 permalink: grid/
 ---
 
-<div class="grid grid__duo grid--sample">
-  <div class="grid--item">
+<div class="grid grid--duo grid__sample">
+  <div class="grid__item">
     <h3>Duo Item 1</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Duo Item 2</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 </div>
 
-<div class="grid grid__trio grid--sample">
-  <div class="grid--item">
+<div class="grid grid--trio grid__sample">
+  <div class="grid__item">
     <h3>Trio Item 1</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Trio Item 2</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Trio Item 3</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 </div>
 
-<div class="grid grid__quartet grid--sample">
-  <div class="grid--item">
+<div class="grid grid--quartet grid__sample">
+  <div class="grid__item">
     <h3>Quartet Item 1</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Quartet Item 2</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Quartet Item 3</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Quartet Item 4</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 </div>
 
-<div class="grid grid__sextet grid--sample">
-  <div class="grid--item">
+<div class="grid grid--sextet grid__sample">
+  <div class="grid__item">
     <h3>Sextet Item 1</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Sextet Item 2</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Sextet Item 3</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Sextet Item 4</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Sextet Item 5</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="grid--item">
+  <div class="grid__item">
     <h3>Sextet Item 6</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</div>
+
+<div class="grid grid__rail--right grid__sample">
+  <div class="grid__item grid__item__main">
+    <h3>Grid Rail Right (Main)</h3>
+    <p>This main div is the first in the markup, the aside is second.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <aside class="grid__item grid__item__rail">
+    <h3>Grid Rail Right (Aside)</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </aside>
+</div>
+<div class="grid grid__rail--right grid__sample reverse-order">
+  <aside class="grid__item grid__item__rail">
+    <h3>Grid Rail Right (Aside)</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </aside>
+  <div class="grid__item grid__item__main">
+    <h3>Grid Rail Right (Main)</h3>
+    <p>The <code>.reverse-order</code> class is present. This main div is the second in the markup, the aside is first.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</div>
+
+<div class="grid grid__rail--left grid__sample">
+  <aside class="grid__item grid__item__rail">
+    <h3>Grid Rail Left (Aside)</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </aside>
+  <div class="grid__item grid__item__main">
+    <h3>Grid Rail Left (Main)</h3>
+    <p>This main div is the second in the markup, the aside is first.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</div>
+
+<div class="grid grid__rail--left grid__sample reverse-order">
+  <div class="grid__item grid__item__main">
+    <h3>Grid Rail Left (Main)</h3>
+    <p>The <code>.reverse-order</code> class is present. This main div is the first in the markup, the aside is second.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <aside class="grid__item grid__item__rail">
+    <h3>Grid Rail Left (Aside)</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </aside>
+</div>
+
+<div class="grid grid--thirds grid__sample">
+   <div class="grid__item grid--thirds__one">
+     <h3>Grid Thirds – One</h3>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+   <div class="grid__item grid--thirds__two">
+     <h3>Grid Thirds – Two</h3>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ </div>
+ 
+ <div class="grid grid--thirds grid__sample">
+   <div class="grid__item grid--thirds__two">
+     <h3>Grid Thirds – Two</h3>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+   <div class="grid__item grid--thirds__one">
+     <h3>Grid Thirds – One</h3>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ </div>
+ 
+<div class="grid grid--duo grid__sample">
+  <div class="grid__item">
+    <h3>Nested Grid example</h3>
+    <p>This is <code>.grid grid--duo</code> with another inside the second column.</p>
+  </div>
+  <div class="grid__item" style="padding: 0;">
+    <div class="grid grid--duo">
+      <div class="grid__item">
+        <h3>Nested Grid example</h3>
+        <p>Another <code>.grid grid--duo</code> lives inside the second column of a <code>.grid grid--duo</code>.</p>
+      </div>
+      <div class="grid__item">
+        <h3>Nested Grid example</h3>
+        <p>In the end, custom flexbox classes are a better way to go about this and control breakpoints as well.</p>
+      </div>
+    </div>
   </div>
 </div>

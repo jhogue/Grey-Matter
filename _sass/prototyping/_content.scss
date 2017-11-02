@@ -6,21 +6,50 @@
 //  	<article class="content--main">
 .content {
 
-  &--header {}
+  &__header {
+    padding: $vert-line-height 0;
+  }
 
-  &--title {}
+  &__title {}
 
-  &--main {
+  &__main {
     padding-bottom: $vert-line-height;
   }
 
   @include media($medium-up) {
 
-    &--main {
+    &__main {
       padding-bottom: $vert-line-height*2;
     }
   }
 }
+
+
+// Add link icons to Headings with IDs
+// The anchors inside are added via JS, so, if no JS... no icons
+h1[id],
+h2[id],
+h3[id],
+h4[id] {
+
+  a {
+    color: inherit;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      @include icon-font('\f0c1');
+      color: palette(mono, 25) !important;
+      font-size: 1rem !important;
+      margin-left: .5em;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
 
 // A few special rules for Refills on the Sample page
 // for the sample Pattern Library
